@@ -1,6 +1,6 @@
 # 🚀 Castify - Next-Gen Video Streaming Platform
 
-**Castify** is a futuristic, Twitch-inspired video streaming platform built with **React.js** and **Tailwind CSS**. It delivers a sleek, modern, and highly interactive experience designed to simulate a real-world streaming service. From live streams and chat to channel customization and analytics, Castify is built as a premium product ready to scale.
+**Castify** is a futuristic video streaming platform built with **React.js** and **Tailwind CSS**. It delivers a sleek, modern, and highly interactive experience designed to simulate a real-world streaming service. From live streams and chat to channel customization and analytics, Castify is built as a premium product ready to scale.
 
 ---
 
