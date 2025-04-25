@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Broadcast } from "lucide-react";
+import { Tv } from "lucide-react";
 
 const StudioPage = () => {
   return (
@@ -15,7 +15,7 @@ const StudioPage = () => {
         </p>
         <Button asChild size="lg" className="bg-castify-purple hover:bg-castify-purple/90">
           <Link to="/dashboard">
-            <Broadcast className="mr-2 h-5 w-5" />
+            <Tv className="mr-2 h-5 w-5" />
             Launch Studio
           </Link>
         </Button>
