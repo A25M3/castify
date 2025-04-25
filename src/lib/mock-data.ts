@@ -1,8 +1,6 @@
 
 import { faker } from '@faker-js/faker';
 
-<a href="https://ibb.co/DD60BCTk"><img src="https://i.ibb.co/LzqVTtH6/fortnite.jpg" alt="fortnite" border="0" /></a>
-
 // Categories
 export const categories = [
   { id: 1, name: 'Just Chatting', viewers: 483200, imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3' },
