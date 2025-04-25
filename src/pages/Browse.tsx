@@ -111,7 +111,7 @@ const BrowsePage = () => {
             </section>
             
             {/* Category-specific streams */}
-            {categories.slice(0, 3).map(category => {
+            {categories.slice(0, 12).map(category => {
               const categoryStreams = trendingStreamers
                 .filter(streamer => streamer.game === category.name)
                 .slice(0, 4);
