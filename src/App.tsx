@@ -32,9 +32,29 @@ const App = () => (
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
               <Route path="browse" element={<Browse />} />
+              <Route path="categories" element={<Browse />} />
               <Route path="category/:id" element={<Category />} />
               <Route path="channel/:username" element={<Channel />} />
               <Route path="dashboard" element={<Dashboard />} />
+              
+              {/* Support & Resources */}
+              <Route path="support" element={<NotFound />} />
+              <Route path="safety" element={<NotFound />} />
+              <Route path="creators" element={<NotFound />} />
+              <Route path="partners" element={<NotFound />} />
+              <Route path="studio" element={<NotFound />} />
+              <Route path="start-streaming" element={<NotFound />} />
+              
+              {/* Company */}
+              <Route path="about" element={<NotFound />} />
+              <Route path="careers" element={<NotFound />} />
+              <Route path="press" element={<NotFound />} />
+              <Route path="brand" element={<NotFound />} />
+              
+              {/* Legal */}
+              <Route path="terms" element={<NotFound />} />
+              <Route path="privacy" element={<NotFound />} />
+              <Route path="cookie-settings" element={<NotFound />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />

@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Heart } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Heart, Languages } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,6 +8,19 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+
+const languages = [
+  { code: 'en-US', name: 'English (US)' },
+  { code: 'es', name: 'Español' },
+  { code: 'fr', name: 'Français' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'pt', name: 'Português' },
+  { code: 'ru', name: 'Русский' },
+  { code: 'ja', name: 'Japanese (日本語)' },
+  { code: 'ko', name: 'Korean (한국어)' },
+  { code: 'zh', name: 'Chinese (中文)' }
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -25,16 +38,16 @@ export default function Footer() {
               The next generation streaming platform for creators and audiences.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
                 <Youtube size={20} />
               </a>
             </div>
@@ -54,14 +67,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
-                  About Castify Studio
-                </a>
+                <Link to="/studio" className="text-muted-foreground hover:text-castify-purple transition">
+                  Castify Studio
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/start-streaming" className="text-muted-foreground hover:text-castify-purple transition">
                   Start Streaming
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -70,24 +83,24 @@ export default function Footer() {
             <h4 className="font-medium mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/support" className="text-muted-foreground hover:text-castify-purple transition">
                   Support
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/safety" className="text-muted-foreground hover:text-castify-purple transition">
                   Safety Center
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/creators" className="text-muted-foreground hover:text-castify-purple transition">
                   Creator Resources
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/partners" className="text-muted-foreground hover:text-castify-purple transition">
                   Partners
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -96,24 +109,24 @@ export default function Footer() {
             <h4 className="font-medium mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/about" className="text-muted-foreground hover:text-castify-purple transition">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/careers" className="text-muted-foreground hover:text-castify-purple transition">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/press" className="text-muted-foreground hover:text-castify-purple transition">
                   Press
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+                <Link to="/brand" className="text-muted-foreground hover:text-castify-purple transition">
                   Brand
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -126,28 +139,29 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap gap-4 md:gap-6 text-sm justify-center">
-            <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+            <Link to="/terms" className="text-muted-foreground hover:text-castify-purple transition">
               Terms of Service
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+            </Link>
+            <Link to="/privacy" className="text-muted-foreground hover:text-castify-purple transition">
               Privacy Policy
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-castify-purple transition">
+            </Link>
+            <Link to="/cookie-settings" className="text-muted-foreground hover:text-castify-purple transition">
               Cookie Settings
-            </a>
+            </Link>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-8">
+                <Button variant="ghost" size="sm" className="h-8 gap-2">
+                  <Languages size={16} />
                   English (US)
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>English (US)</DropdownMenuItem>
-                <DropdownMenuItem>Español</DropdownMenuItem>
-                <DropdownMenuItem>Français</DropdownMenuItem>
-                <DropdownMenuItem>Deutsch</DropdownMenuItem>
-                <DropdownMenuItem>日本語</DropdownMenuItem>
+              <DropdownMenuContent align="end" className="w-[200px]">
+                {languages.map((lang) => (
+                  <DropdownMenuItem key={lang.code}>
+                    {lang.name}
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
