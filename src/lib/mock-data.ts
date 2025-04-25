@@ -1,10 +1,12 @@
 
 import { faker } from '@faker-js/faker';
 
+<a href="https://ibb.co/DD60BCTk"><img src="https://i.ibb.co/LzqVTtH6/fortnite.jpg" alt="fortnite" border="0" /></a>
+
 // Categories
 export const categories = [
   { id: 1, name: 'Just Chatting', viewers: 483200, imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3' },
-  { id: 2, name: 'Fortnite', viewers: 237500, imageUrl: 'https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%22fortnite.jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-04-24T20%3A08%3A18.311Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F2ebbce2afb2547ca%2Ffortnite.jpg%3FExpires%3D1840219698%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3Duy0Ej7SjQEOBgeSt3YtP~KvHjDOkc6o-HkB-6stgAdZmnLGLfIYYWfSUQwjXcpw-wcIQ~I9swqhMYjOO8E6lhxkUXiiowgeO8ZjyuFx9ogBD4LkWpOwSTd3~ohZlM-IrxF3~TYy9DyGp7wUB4XUP22A1zbrICEN92o5tW1yLm3-ZwDpWgIfxhX54A-x91q9ps9Yfi~InEwQqDrST6N4O1Mu~kB5dRx9l-lLqFL5iyU9~RBjwYmWtwoyyeHt2KdZl650FVzRR3i326uHYnKpUKXwo1n27vKB3sLB9zUXZMMLhRTKk6d6U73xBCr58Z2Mf8kN2OnznDgyNN0JuhnWqvA__%22%7D' },
+  { id: 2, name: 'Fortnite', viewers: 237500, imageUrl: 'https://i.ibb.co/LzqVTtH6/fortnite.jpg' },
   { id: 3, name: 'League of Legends', viewers: 198400, imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3' },
   { id: 4, name: 'Music', viewers: 104600, imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3' },
   { id: 5, name: 'VALORANT', viewers: 97800, imageUrl: 'https://images.unsplash.com/photo-1580327344181-c1163234e5a0?ixlib=rb-4.0.3' },
