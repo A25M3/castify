@@ -169,7 +169,7 @@ export default function Footer() {
         
         <div className="mt-6 text-center text-xs text-muted-foreground">
           <p className="flex items-center justify-center gap-1">
-            Made with <Heart size={12} className="text-castify-pink" /> by Lovable
+            Made with <Heart size={12} className="text-castify-pink" /> by CASTIFY
           </p>
         </div>
       </div>
