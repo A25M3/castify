@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "Home",
@@ -91,8 +92,6 @@ export default {
   
   // Common UI elements
   viewProfile: "View Profile",
-  followers: "{count} followers",
-  viewers: "{count} viewers",
   watchNow: "Watch Now",
   loadMore: "Load More",
   showAll: "Show All",
@@ -101,13 +100,11 @@ export default {
   sortBy: "Sort by",
   ascending: "Ascending",
   descending: "Descending",
-  categories: "Categories",
   streams: "Streams",
   live: "LIVE",
   offline: "Offline",
   results: "Results",
-  noResults: "No results found",
-  tryDifferent: "Try different search terms",
+  tryDifferentSearch: "Try different search terms",
   loading: "Loading...",
   error: "An error occurred",
   retry: "Retry",
