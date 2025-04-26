@@ -1,4 +1,3 @@
-
 export default {
   // Navigation
   home: "Home",
@@ -7,7 +6,7 @@ export default {
   
   // Footer sections
   platform: "Platform",
-  resources: "Resources",
+  resources: "Resources", 
   company: "Company",
   legal: "Legal",
   
@@ -116,4 +115,52 @@ export default {
   upcomingStream: "Upcoming Stream",
   pastBroadcast: "Past Broadcast",
   duration: "Duration: {duration}"
+  
+  // About Page
+  aboutCastify: "About Castify",
+  aboutDescription: "Castify is the next generation streaming platform, built for creators and their communities.",
+  ourMission: "Our Mission",
+  missionDescription: "To empower creators to share their passion with the world and build meaningful connections through live streaming.",
+  ourVision: "Our Vision",
+  visionDescription: "To be the most creator-friendly and innovative streaming platform, setting new standards for live entertainment.",
+  joinTeam: "Join Our Team",
+  pressKit: "Press Kit",
+  
+  // Brand Page
+  brandGuidelines: "Brand Guidelines",
+  brandDescription: "Everything you need to know about using the Castify brand assets correctly.",
+  logo: "Logo",
+  logoDescription: "Download our logo in various formats and sizes.",
+  downloadLogos: "Download Logos",
+  colorPalette: "Color Palette",
+  castifyPurple: "Castify Purple",
+  castifyBlue: "Castify Blue",
+  downloadStyleGuide: "Download Style Guide",
+  typography: "Typography",
+  typographyDescription: "Official fonts and typography guidelines.",
+  downloadFonts: "Download Fonts",
+  
+  // Careers Page
+  careersAtCastify: "Careers at Castify",
+  careersDescription: "Join us in shaping the future of live streaming. We're always looking for talented individuals to join our team.",
+  engineering: "Engineering",
+  seniorFrontend: "Senior Frontend Engineer",
+  backendEngineer: "Backend Engineer",
+  remoteFullTime: "Remote · Full-time",
+  productDesign: "Product & Design",
+  productManager: "Product Manager",
+  uiuxDesigner: "UI/UX Designer",
+  applyNow: "Apply Now",
+  
+  // Cookie Settings Page
+  cookieSettings: "Cookie Settings",
+  cookieDescription: "Manage your cookie preferences and learn about how we use cookies.",
+  essentialCookies: "Essential Cookies",
+  essentialCookiesDesc: "Required for the website to function properly",
+  analyticsCookies: "Analytics Cookies",
+  analyticsCookiesDesc: "Help us improve our website by collecting usage information",
+  marketingCookies: "Marketing Cookies",
+  marketingCookiesDesc: "Used to deliver personalized advertisements",
+  preferenceCookies: "Preference Cookies",
+  preferenceCookiesDesc: "Remember your settings and preferences"
 } as const;
