@@ -114,7 +114,7 @@ export default {
   viewerCount: "{count} watching now",
   upcomingStream: "Upcoming Stream",
   pastBroadcast: "Past Broadcast",
-  duration: "Duration: {duration}"
+  duration: "Duration: {duration}",
   
   // About Page
   aboutCastify: "About Castify",
