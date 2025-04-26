@@ -41,4 +41,5 @@ export default {
   
   // Misc
   languageSelection: "Select Language",
+  categories: "Categories",
 } as const;

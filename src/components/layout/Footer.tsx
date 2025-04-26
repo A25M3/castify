@@ -1,5 +1,6 @@
+
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Heart, Languages } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Heart, Globe } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -58,7 +59,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/studio" className="text-muted-foreground hover:text-castify-purple transition">
-                  Castify Studio
+                  {t("studioTitle")}
                 </Link>
               </li>
               <li>
@@ -84,12 +85,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/creators" className="text-muted-foreground hover:text-castify-purple transition">
-                  Creator Resources
+                  {t("creatorResources")}
                 </Link>
               </li>
               <li>
                 <Link to="/partners" className="text-muted-foreground hover:text-castify-purple transition">
-                  Partners
+                  {t("partners")}
                 </Link>
               </li>
             </ul>
@@ -105,17 +106,17 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/careers" className="text-muted-foreground hover:text-castify-purple transition">
-                  Careers
+                  {t("careers")}
                 </Link>
               </li>
               <li>
                 <Link to="/press" className="text-muted-foreground hover:text-castify-purple transition">
-                  Press
+                  {t("press")}
                 </Link>
               </li>
               <li>
                 <Link to="/brand" className="text-muted-foreground hover:text-castify-purple transition">
-                  Brand
+                  {t("brand")}
                 </Link>
               </li>
             </ul>
@@ -142,7 +143,7 @@ export default function Footer() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="h-8 gap-2">
-                  <Languages size={16} />
+                  <Globe size={16} />
                   {currentLanguage.name}
                 </Button>
               </DropdownMenuTrigger>
