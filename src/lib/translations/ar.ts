@@ -45,9 +45,9 @@ export default {
   
   // Pages
   welcomeToCastify: "مرحباً بك في Castify",
-  discoverStreamers: "اكتشف وشاهد وتفاعل مع البثاثين والمنشئين المفضلين لديك في مكان واحد.",
+  discoverStreamers: "اكتشف وشاهد وتفاعل مع الستريمرز والمنشئين المفضلين لديك في مكان واحد.",
   browseStreams: "تصفح البث المباشر",
-  becomeStreamer: "كن بثاثاً",
+  becomeStreamer: "كن ستريمر",
   trendingStreams: "البث الرائج",
   seeAll: "عرض الكل",
   popularCategories: "الفئات الشائعة",
@@ -55,7 +55,7 @@ export default {
   recommendedStreams: "البث الموصى به",
   seeMore: "المزيد",
   joinCommunity: "انضم إلى مجتمع Castify",
-  joinCommunityDesc: "أنشئ حساباً لمتابعة البثاثين المفضلين لديك، والمشاركة في المحادثات، وتلقي إشعارات عندما يبدؤون البث المباشر.",
+  joinCommunityDesc: "أنشئ حساباً لمتابعة الستريمرز المفضلين لديك، والمشاركة في المحادثات، وتلقي إشعارات عندما يبدؤون البث المباشر.",
   signUpNow: "سجل الآن",
   learnMore: "اعرف المزيد",
   
