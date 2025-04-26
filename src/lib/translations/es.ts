@@ -42,4 +42,51 @@ export default {
   // Misc
   languageSelection: "Seleccionar Idioma",
   categories: "Categorías",
+  
+  // Pages
+  welcomeToCastify: "Bienvenido a Castify",
+  discoverStreamers: "Descubre, mira e interactúa con tus streamers y creadores favoritos en un solo lugar.",
+  browseStreams: "Explorar Streams",
+  becomeStreamer: "Conviértete en Streamer",
+  trendingStreams: "Streams en Tendencia",
+  seeAll: "Ver todo",
+  popularCategories: "Categorías Populares",
+  viewAll: "Ver todo",
+  recommendedStreams: "Streams Recomendados",
+  seeMore: "Ver más",
+  joinCommunity: "Únete a la Comunidad Castify",
+  joinCommunityDesc: "Crea una cuenta para seguir a tus streamers favoritos, participar en chats y recibir notificaciones cuando estén en vivo.",
+  signUpNow: "Regístrate Ahora",
+  learnMore: "Más Información",
+  
+  // Category page
+  liveChannels: "Canales en Vivo",
+  noLiveStreams: "No hay streams en vivo en este momento",
+  checkBackLater: "Vuelve más tarde o explora otras categorías",
+  browseCategories: "Explorar Categorías",
+  recommendedStreamers: "Streamers de {category} Recomendados",
+  viewers: "{count} espectadores",
+  followers: "{count} seguidores",
+  
+  // Studio page
+  launchStudio: "Iniciar Studio",
+  
+  // Account
+  myChannel: "Mi Canal",
+  creatorDashboard: "Panel de Creador",
+  settings: "Configuración",
+  
+  // Search
+  search: "Buscar canales, juegos, streams...",
+  searchCategories: "Buscar categorías",
+  noResults: "No se encontraron resultados",
+  tryDifferent: "Intenta con otros términos de búsqueda",
+  searchFor: 'Buscar "{query}"',
+  
+  // Notifications
+  notifications: "Notificaciones",
+  justWentLive: "acaba de iniciar stream!",
+  followed: "te ha seguido",
+  minutesAgo: "hace {count} minutos",
+  hoursAgo: "hace {count} horas"
 } as const;

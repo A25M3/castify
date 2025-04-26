@@ -42,4 +42,51 @@ export default {
   // Misc
   languageSelection: "Select Language",
   categories: "Categories",
+  
+  // Pages
+  welcomeToCastify: "Welcome to Castify",
+  discoverStreamers: "Discover, watch, and engage with your favorite streamers and creators in one place.",
+  browseStreams: "Browse Streams",
+  becomeStreamer: "Become a Streamer",
+  trendingStreams: "Trending Streams",
+  seeAll: "See all",
+  popularCategories: "Popular Categories",
+  viewAll: "View all",
+  recommendedStreams: "Recommended Streams",
+  seeMore: "See more",
+  joinCommunity: "Join the Castify Community",
+  joinCommunityDesc: "Create an account to follow your favorite streamers, participate in chats, and receive notifications when they go live.",
+  signUpNow: "Sign Up Now",
+  learnMore: "Learn More",
+  
+  // Category page
+  liveChannels: "Live Channels",
+  noLiveStreams: "No live streams at the moment",
+  checkBackLater: "Check back later or browse other categories",
+  browseCategories: "Browse Categories",
+  recommendedStreamers: "Recommended {category} Streamers",
+  viewers: "{count} viewers",
+  followers: "{count} followers",
+  
+  // Studio page
+  launchStudio: "Launch Studio",
+  
+  // Account
+  myChannel: "Channel",
+  creatorDashboard: "Creator Dashboard",
+  settings: "Settings",
+  
+  // Search
+  search: "Search channels, games, streams...",
+  searchCategories: "Search categories",
+  noResults: "No results found",
+  tryDifferent: "Try a different search term",
+  searchFor: 'Search for "{query}"',
+  
+  // Notifications
+  notifications: "Notifications",
+  justWentLive: "just went live!",
+  followed: "followed you",
+  minutesAgo: "{count} minutes ago",
+  hoursAgo: "{count} hours ago"
 } as const;
