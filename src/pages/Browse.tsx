@@ -8,9 +8,11 @@ import { categories, trendingStreamers } from '@/lib/mock-data';
 import CategoryCard from '@/components/streams/CategoryCard';
 import StreamCard from '@/components/streams/StreamCard';
 import { useState } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const BrowsePage = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const { t } = useTranslation();
   
   // Filter categories based on search query
   const filteredCategories = categories.filter(category =>
@@ -30,12 +32,12 @@ const BrowsePage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Browse</h1>
+      <h1 className="text-3xl font-bold mb-6">{t('browse')}</h1>
       
       <Tabs defaultValue="categories" className="mb-8">
         <TabsList>
-          <TabsTrigger value="categories">Categories</TabsTrigger>
-          <TabsTrigger value="streams">Live Streams</TabsTrigger>
+          <TabsTrigger value="categories">{t('categories')}</TabsTrigger>
+          <TabsTrigger value="streams">{t('liveChannels')}</TabsTrigger>
         </TabsList>
         
         <TabsContent value="categories" className="pt-6">
@@ -45,7 +47,7 @@ const BrowsePage = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Search categories"
+                placeholder={t('searchCategories')}
                 className="pl-10"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -76,8 +78,8 @@ const BrowsePage = () => {
             </div>
           ) : (
             <div className="text-center py-16">
-              <h2 className="text-xl font-medium mb-2">No categories found</h2>
-              <p className="text-muted-foreground">Try a different search term</p>
+              <h2 className="text-xl font-medium mb-2">{t('noResults')}</h2>
+              <p className="text-muted-foreground">{t('tryDifferent')}</p>
             </div>
           )}
         </TabsContent>
@@ -87,9 +89,9 @@ const BrowsePage = () => {
             {/* Featured Streams */}
             <section>
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold">Featured Streams</h2>
+                <h2 className="text-2xl font-bold">{t('trendingStreams')}</h2>
                 <Link to="/browse" className="text-castify-purple hover:underline flex items-center gap-1">
-                  See all <ArrowRight className="h-4 w-4" />
+                  {t('seeAll')} <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
               
@@ -121,7 +123,7 @@ const BrowsePage = () => {
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-2xl font-bold">{category.name}</h2>
                     <Link to={`/category/${category.id}`} className="text-castify-purple hover:underline flex items-center gap-1">
-                      See all <ArrowRight className="h-4 w-4" />
+                      {t('seeAll')} <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
                   

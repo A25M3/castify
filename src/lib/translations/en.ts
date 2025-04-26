@@ -1,4 +1,3 @@
-
 export default {
   // Navigation
   home: "Home",
@@ -88,5 +87,36 @@ export default {
   justWentLive: "just went live!",
   followed: "followed you",
   minutesAgo: "{count} minutes ago",
-  hoursAgo: "{count} hours ago"
+  hoursAgo: "{count} hours ago",
+  
+  // Common UI elements
+  viewProfile: "View Profile",
+  followers: "{count} followers",
+  viewers: "{count} viewers",
+  watchNow: "Watch Now",
+  loadMore: "Load More",
+  showAll: "Show All",
+  hideAll: "Hide All",
+  filterResults: "Filter Results",
+  sortBy: "Sort by",
+  ascending: "Ascending",
+  descending: "Descending",
+  categories: "Categories",
+  streams: "Streams",
+  live: "LIVE",
+  offline: "Offline",
+  results: "Results",
+  noResults: "No results found",
+  tryDifferent: "Try different search terms",
+  loading: "Loading...",
+  error: "An error occurred",
+  retry: "Retry",
+  
+  // Stream related
+  hostedBy: "Hosted by {username}",
+  startedStreaming: "Started streaming {time}",
+  viewerCount: "{count} watching now",
+  upcomingStream: "Upcoming Stream",
+  pastBroadcast: "Past Broadcast",
+  duration: "Duration: {duration}"
 } as const;

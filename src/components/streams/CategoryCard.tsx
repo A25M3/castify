@@ -1,6 +1,6 @@
 
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface CategoryCardProps {
   id: number;
@@ -9,42 +9,24 @@ interface CategoryCardProps {
   viewers: number;
 }
 
-export default function CategoryCard({ id, name, imageUrl, viewers }: CategoryCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  
-  const formatViewerCount = (count: number) => {
-    if (count >= 1000000) {
-      return `${(count / 1000000).toFixed(1)}M`;
-    } else if (count >= 1000) {
-      return `${(count / 1000).toFixed(1)}K`;
-    } else {
-      return count.toString();
-    }
-  };
+const CategoryCard = ({ id, name, imageUrl, viewers }: CategoryCardProps) => {
+  const { t } = useTranslation();
 
   return (
-    <Link 
-      to={`/category/${id}`}
-      className="group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="flex flex-col gap-2 animate-fade-in">
-        {/* Image */}
-        <div className="relative aspect-square rounded-lg overflow-hidden transition-transform duration-300 group-hover:scale-[1.03]">
-          <img 
-            src={imageUrl} 
-            alt={name}
-            className={`w-full h-full object-cover transition-transform duration-300 ${isHovered ? 'scale-110' : 'scale-100'}`} 
-          />
-        </div>
-        
-        {/* Category info */}
-        <div>
-          <h3 className="text-sm font-medium line-clamp-1">{name}</h3>
-          <p className="text-xs text-muted-foreground">{formatViewerCount(viewers)} viewers</p>
-        </div>
+    <Link to={`/category/${id}`} className="group block">
+      <div className="aspect-[4/5] rounded-lg overflow-hidden mb-2">
+        <img
+          src={imageUrl}
+          alt={name}
+          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+        />
       </div>
+      <h3 className="font-medium line-clamp-1">{name}</h3>
+      <p className="text-sm text-muted-foreground">
+        {t('viewers', { count: viewers })}
+      </p>
     </Link>
   );
-}
+};
+
+export default CategoryCard;
