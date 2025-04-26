@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import StreamCard from '@/components/streams/StreamCard';
 import CategoryCard from '@/components/streams/CategoryCard';
 import VideoPlayer from '@/components/streams/VideoPlayer';
+import { useTranslation } from '@/hooks/useTranslation';
 import { 
   categories, 
   featuredStreamers, 
@@ -14,6 +15,7 @@ import {
 } from '@/lib/mock-data';
 
 const HomePage = () => {
+  const { t } = useTranslation();
   // Pick a featured streamer for the hero section
   const heroStreamer = featuredStreamers[0];
 
@@ -27,21 +29,21 @@ const HomePage = () => {
           <div className="relative z-20 container mx-auto px-4 pt-8 pb-16 lg:pt-16 lg:pb-24 flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-1/2 order-2 lg:order-1">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-castify-purple to-castify-blue bg-clip-text text-transparent">
-                Welcome to Castify
+                {t('welcomeToCastify')}
               </h1>
               <p className="text-lg md:text-xl mb-8 text-foreground/80">
-                Discover, watch, and engage with your favorite streamers and creators in one place.
+                {t('discoverStreamers')}
               </p>
               
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-castify-purple hover:bg-castify-purple/90">
                   <Link to="/browse">
-                    Browse Streams
+                    {t('browseStreams')}
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/signup">
-                    Become a Streamer
+                    {t('becomeStreamer')}
                   </Link>
                 </Button>
               </div>
@@ -71,9 +73,9 @@ const HomePage = () => {
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold">Trending Streams</h2>
+            <h2 className="text-2xl font-bold">{t('trendingStreams')}</h2>
             <Link to="/browse" className="text-castify-purple hover:underline flex items-center gap-1">
-              See all <ArrowRight className="h-4 w-4" />
+              {t('seeAll')} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           
@@ -99,9 +101,9 @@ const HomePage = () => {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold">Popular Categories</h2>
+            <h2 className="text-2xl font-bold">{t('popularCategories')}</h2>
             <Link to="/categories" className="text-castify-purple hover:underline flex items-center gap-1">
-              View all <ArrowRight className="h-4 w-4" />
+              {t('viewAll')} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           
@@ -123,9 +125,9 @@ const HomePage = () => {
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold">Recommended Streams</h2>
+            <h2 className="text-2xl font-bold">{t('recommendedStreams')}</h2>
             <Link to="/browse" className="text-castify-purple hover:underline flex items-center gap-1">
-              See more <ArrowRight className="h-4 w-4" />
+              {t('seeMore')} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           
@@ -151,20 +153,20 @@ const HomePage = () => {
       <section className="py-16 bg-gradient-to-r from-castify-purple-darkest to-castify-purple-dark">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Join the Castify Community
+            {t('joinCommunity')}
           </h2>
           <p className="text-lg md:text-xl mb-8 text-white/80 max-w-2xl mx-auto">
-            Create an account to follow your favorite streamers, participate in chats, and receive notifications when they go live.
+            {t('joinCommunityDesc')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="bg-white text-castify-purple-dark hover:bg-white/90">
               <Link to="/signup">
-                Sign Up Now
+                {t('signUpNow')}
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
               <Link to="/about">
-                Learn More
+                {t('learnMore')}
               </Link>
             </Button>
           </div>
