@@ -1,4 +1,3 @@
-
 export default {
   // Navigation
   home: "首页",
@@ -19,8 +18,6 @@ export default {
   safetyCenter: "安全中心",
   creatorResources: "创作者资源",
   partners: "合作伙伴",
-  about: "关于我们",
-  careers: "招聘信息",
   press: "媒体报道",
   brand: "品牌",
   terms: "服务条款",

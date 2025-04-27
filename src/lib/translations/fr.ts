@@ -18,13 +18,7 @@ export default {
   safetyCenter: "Centre de Sécurité",
   creatorResources: "Ressources pour créateurs",
   partners: "Partenaires",
-  about: "À propos",
-  careers: "Carrières",
   press: "Presse",
-  brand: "Marque",
-  terms: "Conditions d'utilisation",
-  privacy: "Politique de confidentialité",
-  cookies: "Paramètres des cookies",
   
   // Auth
   login: "Connexion",

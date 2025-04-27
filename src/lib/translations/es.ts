@@ -13,18 +13,12 @@ export default {
   // Common sections
   studioTitle: "Castify Studio",
   studioDescription: "Tu centro de control profesional de streaming. Administra tu transmisión, interactúa con tu audiencia y haz crecer tu canal.",
-  startStreaming: "Comenzar Streaming",
+  startStreaming: "Comenzar a transmitir",
   supportCenter: "Centro de Soporte",
   safetyCenter: "Centro de Seguridad",
   creatorResources: "Recursos para Creadores",
   partners: "Socios",
-  about: "Acerca de",
-  careers: "Carreras",
   press: "Prensa",
-  brand: "Marca",
-  terms: "Términos de Servicio",
-  privacy: "Política de Privacidad",
-  cookies: "Configuración de Cookies",
   
   // Auth
   login: "Iniciar Sesión",

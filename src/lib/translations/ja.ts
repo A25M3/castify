@@ -13,18 +13,12 @@ export default {
   // Common sections
   studioTitle: "Castify Studio",
   studioDescription: "プロフェッショナルなストリーミングコマンドセンター。ストリームを管理し、視聴者と交流し、チャンネルを成長させましょう。",
-  startStreaming: "ストリーミングを開始",
+  startStreaming: "配信を始める",
   supportCenter: "サポートセンター",
-  safetyCenter: "セーフティセンター",
+  safetyCenter: "安全センター",
   creatorResources: "クリエイターリソース",
   partners: "パートナー",
-  about: "会社概要",
-  careers: "採用情報",
   press: "プレス",
-  brand: "ブランド",
-  terms: "利用規約",
-  privacy: "プライバシーポリシー",
-  cookies: "クッキー設定",
 
   // Auth
   login: "ログイン",

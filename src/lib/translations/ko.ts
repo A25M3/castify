@@ -11,20 +11,14 @@ export default {
   legal: "법적 고지",
 
   // Common sections
-  studioTitle: "Castify 스튜디오",
+  studioTitle: "Castify Studio",
   studioDescription: "당신의 전문 스트리밍 커맨드 센터. 스트림을 관리하고, 시청자와 소통하며 채널을 성장시키세요.",
   startStreaming: "스트리밍 시작하기",
-  supportCenter: "지원 센터",
+  supportCenter: "고객지원 센터",
   safetyCenter: "안전 센터",
   creatorResources: "크리에이터 리소스",
   partners: "파트너",
-  about: "회사 소개",
-  careers: "채용",
-  press: "보도 자료",
-  brand: "브랜드",
-  terms: "서비스 이용약관",
-  privacy: "개인정보 처리방침",
-  cookies: "쿠키 설정",
+  press: "보도자료",
 
   // Auth
   login: "로그인",
@@ -112,7 +106,7 @@ export default {
   hostedBy: "{username} 님이 진행",
   startedStreaming: "{time} 전에 스트리밍 시작",
   viewerCount: "현재 {count}명 시청 중",
-  upcomingStream: "예정된 스트림",
+  upcomingStream: "예정된 ���트림",
   pastBroadcast: "지난 방송",
   duration: "재생 시간: {duration}",
 
