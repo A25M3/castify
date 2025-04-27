@@ -163,5 +163,67 @@ export default {
   marketingCookies: "Marketing Cookies",
   marketingCookiesDesc: "Used to display personalized advertisements",
   preferenceCookies: "Preference Cookies",
-  preferenceCookiesDesc: "Remember your settings and preferences"
+  preferenceCookiesDesc: "Remember your settings and preferences",
+
+  // Safety Center
+  safetyCenterDesc: "Your safety is our top priority. Learn about our community guidelines, safety tools, and resources.",
+  communityGuidelines: "Community Guidelines",
+  communityGuidelinesDesc: "Our rules and policies to maintain a safe and inclusive environment for everyone.",
+  safetyTools: "Safety Tools",
+  safetyToolsDesc: "Features and settings to help you control your streaming experience.",
+  reportIssues: "Report Issues",
+  reportIssuesDesc: "How to report violations and get help with safety concerns.",
+
+  // Start Streaming
+  startStreamingTitle: "Start Streaming on Castify",
+  startStreamingDesc: "Begin your streaming journey with Castify. Share your passion with the world and build your community.",
+  newToStreaming: "New to Streaming?",
+  newToStreamingDesc: "Get started with our beginner-friendly guide to streaming. Learn the basics and best practices.",
+  readyToStream: "Ready to Stream?",
+  readyToStreamDesc: "Launch Castify Studio and start streaming to your audience right away.",
+
+  // Support Center
+  supportCenterDesc: "Get help with Castify. Find answers to common questions and learn how to make the most of your streaming experience.",
+  helpCenter: "Help Center",
+  helpCenterDesc: "Find answers to common questions about streaming on Castify.",
+  safetyResources: "Safety Resources",
+  safetyResourcesDesc: "Learn about our community guidelines and safety measures.",
+  creatorResourcesDesc: "Access guides and resources to grow your channel.",
+  partnerProgram: "Partner Program",
+  partnerProgramDesc: "Learn about becoming a Castify Partner.",
+  browseFAQs: "Browse FAQs",
+  creatorGuide: "Creator Guide",
+  partnerInfo: "Partner Info",
+
+  // Partners
+  partnerProgramDesc: "Join our exclusive partner program and take your streaming career to new heights.",
+  requirements: "Requirements",
+  reqStreamHours: "Stream for 25 hours in the last 30 days",
+  reqAvgViewers: "Average 75 viewers per stream",
+  reqFollowers: "At least 1000 followers",
+  benefits: "Benefits",
+  benefitBadges: "Custom subscriber badges",
+  benefitSupport: "Priority support access",
+  benefitRevenue: "Revenue sharing opportunities",
+  features: "Features",
+  featureEmotes: "Custom channel emotes",
+  featureAdRevenue: "Ad revenue sharing",
+  featureEvents: "Exclusive partner events",
+  applyForPartnership: "Apply for Partnership",
+
+  // Press Page
+  pressCenter: "Press Center",
+  pressCenterDesc: "Get the latest news, press releases, and media resources about Castify.",
+  pressKitDesc: "Download official Castify logos, brand guidelines, and media assets.",
+  downloadPressKit: "Download Press Kit",
+  mediaInquiries: "Media Inquiries",
+  mediaInquiriesDesc: "For press and media inquiries, please contact our press team.",
+  contactPressTeam: "Contact Press Team",
+  latestNews: "Latest News",
+  newsDate1: "April 25, 2025",
+  newsTitle1: "Castify Announces New Creator Tools",
+  newsDate2: "April 20, 2025",
+  newsTitle2: "Platform Growth Exceeds Expectations",
+  newsDate3: "April 15, 2025",
+  newsTitle3: "New Partnership Program Launched",
 } as const;

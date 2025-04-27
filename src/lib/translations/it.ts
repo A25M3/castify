@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "Home",
@@ -19,6 +20,9 @@ export default {
   creatorResources: "Risorse per Creatori",
   partners: "Partner",
   press: "Stampa",
+  about: "Chi Siamo",
+  careers: "Carriere",
+  brand: "Brand",
   
   // Auth
   login: "Accedi",
@@ -156,5 +160,67 @@ export default {
   marketingCookies: "Cookie di Marketing",
   marketingCookiesDesc: "Utilizzati per offrire pubblicità personalizzate",
   preferenceCookies: "Cookie di Preferenze",
-  preferenceCookiesDesc: "Ricordano le tue impostazioni e preferenze"
+  preferenceCookiesDesc: "Ricordano le tue impostazioni e preferenze",
+
+  // Safety Center
+  safetyCenterDesc: "La tua sicurezza è la nostra priorità. Scopri le nostre linee guida comunitarie, strumenti di sicurezza e risorse.",
+  communityGuidelines: "Linee Guida della Comunità",
+  communityGuidelinesDesc: "Le nostre regole e politiche per mantenere un ambiente sicuro e inclusivo per tutti.",
+  safetyTools: "Strumenti di Sicurezza",
+  safetyToolsDesc: "Funzionalità e impostazioni per aiutarti a controllare la tua esperienza di streaming.",
+  reportIssues: "Segnala Problemi",
+  reportIssuesDesc: "Come segnalare violazioni e ottenere aiuto per questioni di sicurezza.",
+
+  // Start Streaming
+  startStreamingTitle: "Inizia a Streammare su Castify",
+  startStreamingDesc: "Inizia il tuo percorso di streaming con Castify. Condividi la tua passione con il mondo e costruisci la tua comunità.",
+  newToStreaming: "Nuovo allo Streaming?",
+  newToStreamingDesc: "Inizia con la nostra guida per principianti allo streaming. Impara le basi e le migliori pratiche.",
+  readyToStream: "Pronto per lo Streaming?",
+  readyToStreamDesc: "Avvia Castify Studio e inizia subito a trasmettere al tuo pubblico.",
+
+  // Support Center
+  supportCenterDesc: "Ottieni assistenza con Castify. Trova risposte alle domande comuni e scopri come ottenere il massimo dalla tua esperienza di streaming.",
+  helpCenter: "Centro Assistenza",
+  helpCenterDesc: "Trova risposte alle domande comuni sullo streaming su Castify.",
+  safetyResources: "Risorse di Sicurezza",
+  safetyResourcesDesc: "Scopri le nostre linee guida comunitarie e misure di sicurezza.",
+  creatorResourcesDesc: "Accedi a guide e risorse per far crescere il tuo canale.",
+  partnerProgram: "Programma Partner",
+  partnerProgramDesc: "Scopri come diventare un Partner Castify.",
+  browseFAQs: "Sfoglia le FAQ",
+  creatorGuide: "Guida per Creatori",
+  partnerInfo: "Info Partner",
+
+  // Partners
+  partnerProgramDesc: "Unisciti al nostro programma partner esclusivo e porta la tua carriera di streaming a nuovi livelli.",
+  requirements: "Requisiti",
+  reqStreamHours: "Streamma per 25 ore negli ultimi 30 giorni",
+  reqAvgViewers: "Media di 75 spettatori per stream",
+  reqFollowers: "Almeno 1000 follower",
+  benefits: "Vantaggi",
+  benefitBadges: "Badge personalizzati per abbonati",
+  benefitSupport: "Accesso prioritario al supporto",
+  benefitRevenue: "Opportunità di condivisione dei ricavi",
+  features: "Funzionalità",
+  featureEmotes: "Emote personalizzate del canale",
+  featureAdRevenue: "Condivisione dei ricavi pubblicitari",
+  featureEvents: "Eventi esclusivi per partner",
+  applyForPartnership: "Richiedi Partnership",
+
+  // Press Page
+  pressCenter: "Centro Stampa",
+  pressCenterDesc: "Ottieni le ultime notizie, comunicati stampa e risorse per i media su Castify.",
+  pressKitDesc: "Scarica loghi ufficiali Castify, linee guida del brand e risorse per i media.",
+  downloadPressKit: "Scarica Kit Stampa",
+  mediaInquiries: "Richieste Media",
+  mediaInquiriesDesc: "Per richieste di stampa e media, contatta il nostro team stampa.",
+  contactPressTeam: "Contatta Team Stampa",
+  latestNews: "Ultime Notizie",
+  newsDate1: "25 Aprile 2025",
+  newsTitle1: "Castify Annuncia Nuovi Strumenti per Creatori",
+  newsDate2: "20 Aprile 2025",
+  newsTitle2: "Crescita della Piattaforma Supera le Aspettative",
+  newsDate3: "15 Aprile 2025",
+  newsTitle3: "Lanciato Nuovo Programma Partnership",
 } as const;

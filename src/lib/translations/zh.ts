@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "首页",
@@ -19,6 +20,8 @@ export default {
   creatorResources: "创作者资源",
   partners: "合作伙伴",
   press: "媒体报道",
+  about: "关于我们",
+  careers: "职业机会",
   brand: "品牌",
   terms: "服务条款",
   privacy: "隐私政策",
@@ -160,5 +163,67 @@ export default {
   marketingCookies: "营销类 Cookie",
   marketingCookiesDesc: "用于推送个性化广告",
   preferenceCookies: "偏好设置 Cookie",
-  preferenceCookiesDesc: "用于记住您的设置和偏好"
+  preferenceCookiesDesc: "用于记住您的设置和偏好",
+
+  // Safety Center
+  safetyCenterDesc: "您的安全是我们的首要任务。了解我们的社区准则、安全工具和资源。",
+  communityGuidelines: "社区准则",
+  communityGuidelinesDesc: "我们的规则和政策，以维持一个安全和包容的环境。",
+  safetyTools: "安全工具",
+  safetyToolsDesc: "帮助您控制直播体验的功能和设置。",
+  reportIssues: "报告问题",
+  reportIssuesDesc: "如何报告违规行为并获得安全方面的帮助。",
+
+  // Start Streaming
+  startStreamingTitle: "在 Castify 开始直播",
+  startStreamingDesc: "开始您的直播之旅。与世界分享您的激情，建立您的社区。",
+  newToStreaming: "直播新手？",
+  newToStreamingDesc: "通过我们的初学者友好指南开始直播。学习基础知识和最佳实践。",
+  readyToStream: "准备开始直播？",
+  readyToStreamDesc: "启动 Castify Studio，立即向您的观众开始直播。",
+
+  // Support Center
+  supportCenterDesc: "获取 Castify 的帮助。找到常见问题的答案，了解如何充分利用您的直播体验。",
+  helpCenter: "帮助中心",
+  helpCenterDesc: "找到关于在 Castify 上直播的常见问题答案。",
+  safetyResources: "安全资源",
+  safetyResourcesDesc: "了解我们的社区准则和安全措施。",
+  creatorResourcesDesc: "获取帮助您发展频道的指南和资源。",
+  partnerProgram: "合作伙伴计划",
+  partnerProgramDesc: "了解如何成为 Castify 合作伙伴。",
+  browseFAQs: "浏览常见问题",
+  creatorGuide: "创作者指南",
+  partnerInfo: "合作伙伴信息",
+
+  // Partners
+  partnerProgramDesc: "加入我们的专属合作伙伴计划，将您的直播事业提升到新高度。",
+  requirements: "要求",
+  reqStreamHours: "过去30天内直播25小时",
+  reqAvgViewers: "每次直播平均75名观众",
+  reqFollowers: "至少1000名粉丝",
+  benefits: "福利",
+  benefitBadges: "自定义订阅者徽章",
+  benefitSupport: "优先支持服务",
+  benefitRevenue: "收益分享机会",
+  features: "功能",
+  featureEmotes: "自定义频道表情",
+  featureAdRevenue: "广告收益分享",
+  featureEvents: "专属合作伙伴活动",
+  applyForPartnership: "申请成为合作伙伴",
+
+  // Press Page
+  pressCenter: "媒体中心",
+  pressCenterDesc: "获取有关 Castify 的最新消息、新闻发布和媒体资源。",
+  pressKitDesc: "下载官方 Castify 标志、品牌指南和媒体资源。",
+  downloadPressKit: "下载媒体资料包",
+  mediaInquiries: "媒体咨询",
+  mediaInquiriesDesc: "对于新闻和媒体咨询，请联系我们的媒体团队。",
+  contactPressTeam: "联系媒体团队",
+  latestNews: "最新消息",
+  newsDate1: "2025年4月25日",
+  newsTitle1: "Castify 推出新的创作者工具",
+  newsDate2: "2025年4月20日",
+  newsTitle2: "平台增长超出预期",
+  newsDate3: "2025年4月15日",
+  newsTitle3: "推出新的合作伙伴计划",
 } as const;

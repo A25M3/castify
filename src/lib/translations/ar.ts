@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "الرئيسية",
@@ -19,6 +20,12 @@ export default {
   creatorResources: "موارد المبدعين",
   partners: "الشركاء",
   press: "الأخبار",
+  about: "حول",
+  careers: "وظائف",
+  brand: "العلامة التجارية",
+  terms: "شروط الخدمة",
+  privacy: "سياسة الخصوصية",
+  cookies: "إعدادات ملفات تعريف الارتباط",
   
   // Auth
   login: "تسجيل الدخول",
@@ -156,5 +163,67 @@ export default {
   marketingCookies: "ملفات تسويقية",
   marketingCookiesDesc: "تُستخدم لتقديم إعلانات مخصصة",
   preferenceCookies: "ملفات تفضيلات",
-  preferenceCookiesDesc: "تتذكر إعداداتك وتفضيلاتك"
+  preferenceCookiesDesc: "تتذكر إعداداتك وتفضيلاتك",
+
+  // Safety Center
+  safetyCenterDesc: "سلامتك هي أولويتنا القصوى. تعرف على إرشادات المجتمع وأدوات السلامة والموارد لدينا.",
+  communityGuidelines: "إرشادات المجتمع",
+  communityGuidelinesDesc: "قواعدنا وسياساتنا للحفاظ على بيئة آمنة وشاملة للجميع.",
+  safetyTools: "أدوات السلامة",
+  safetyToolsDesc: "الميزات والإعدادات التي تساعدك على التحكم في تجربة البث الخاصة بك.",
+  reportIssues: "الإبلاغ عن المشكلات",
+  reportIssuesDesc: "كيفية الإبلاغ عن الانتهاكات والحصول على المساعدة بشأن مخاوف السلامة.",
+
+  // Start Streaming
+  startStreamingTitle: "ابدأ البث على كاستيفاي",
+  startStreamingDesc: "ابدأ رحلة البث الخاصة بك مع كاستيفاي. شارك شغفك مع العالم وابنِ مجتمعك الخاص.",
+  newToStreaming: "جديد في البث المباشر؟",
+  newToStreamingDesc: "ابدأ مع دليلنا السهل للمبتدئين في البث المباشر. تعلم الأساسيات وأفضل الممارسات.",
+  readyToStream: "جاهز للبث؟",
+  readyToStreamDesc: "أطلق استوديو كاستيفاي وابدأ البث إلى جمهورك على الفور.",
+
+  // Support Center
+  supportCenterDesc: "احصل على المساعدة مع كاستيفاي. ابحث عن إجابات للأسئلة الشائعة وتعلم كيفية الاستفادة القصوى من تجربة البث الخاصة بك.",
+  helpCenter: "مركز المساعدة",
+  helpCenterDesc: "ابحث عن إجابات للأسئلة الشائعة حول البث على كاستيفاي.",
+  safetyResources: "موارد السلامة",
+  safetyResourcesDesc: "تعرف على إرشادات المجتمع وإجراءات السلامة لدينا.",
+  creatorResourcesDesc: "الوصول إلى الأدلة والموارد لتنمية قناتك.",
+  partnerProgram: "برنامج الشركاء",
+  partnerProgramDesc: "تعرف على كيفية أن تصبح شريكًا في كاستيفاي.",
+  browseFAQs: "تصفح الأسئلة الشائعة",
+  creatorGuide: "دليل المبدعين",
+  partnerInfo: "معلومات الشركاء",
+
+  // Partners
+  partnerProgramDesc: "انضم إلى برنامج شركائنا الحصري وارتقِ بمسيرتك في البث المباشر إلى آفاق جديدة.",
+  requirements: "المتطلبات",
+  reqStreamHours: "البث لمدة 25 ساعة في آخر 30 يومًا",
+  reqAvgViewers: "متوسط 75 مشاهدًا لكل بث",
+  reqFollowers: "ما لا يقل عن 1000 متابع",
+  benefits: "المزايا",
+  benefitBadges: "شارات مخصصة للمشتركين",
+  benefitSupport: "الوصول إلى الدعم ذو الأولوية",
+  benefitRevenue: "فرص مشاركة الإيرادات",
+  features: "الميزات",
+  featureEmotes: "رموز تعبيرية مخصصة للقناة",
+  featureAdRevenue: "مشاركة عائدات الإعلانات",
+  featureEvents: "فعاليات حصرية للشركاء",
+  applyForPartnership: "التقدم للشراكة",
+
+  // Press Page
+  pressCenter: "المركز الإعلامي",
+  pressCenterDesc: "احصل على أحدث الأخبار والبيانات الصحفية والموارد الإعلامية عن كاستيفاي.",
+  pressKitDesc: "قم بتنزيل شعارات كاستيفاي الرسمية، وإرشادات العلامة التجارية، والأصول الإعلامية.",
+  downloadPressKit: "تنزيل الحزمة الإعلامية",
+  mediaInquiries: "الاستفسارات الإعلامية",
+  mediaInquiriesDesc: "للاستفسارات الصحفية والإعلامية، يرجى التواصل مع فريقنا الإعلامي.",
+  contactPressTeam: "تواصل مع الفريق الإعلامي",
+  latestNews: "أحدث الأخبار",
+  newsDate1: "25 أبريل 2025",
+  newsTitle1: "كاستيفاي تعلن عن أدوات جديدة للمبدعين",
+  newsDate2: "20 أبريل 2025",
+  newsTitle2: "نمو المنصة يفوق التوقعات",
+  newsDate3: "15 أبريل 2025",
+  newsTitle3: "إطلاق برنامج الشراكة الجديد",
 } as const;
