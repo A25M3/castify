@@ -3,9 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/lib/language-context";
 
 const StartStreamingPage = () => {
   const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
+  const isRtl = currentLanguage.direction === 'rtl';
   
   return (
     <div className="container mx-auto px-4 py-16">
@@ -24,7 +27,7 @@ const StartStreamingPage = () => {
             </p>
             <Button asChild variant="outline">
               <Link to="/creators">
-                {t('learnMore')} <ArrowRight className="ms-2 h-4 w-4" />
+                {t('learnMore')} <ArrowRight className={`${isRtl ? 'mr-2 rtl-mirror' : 'ml-2'} h-4 w-4`} />
               </Link>
             </Button>
           </div>
@@ -35,7 +38,7 @@ const StartStreamingPage = () => {
             </p>
             <Button asChild>
               <Link to="/studio">
-                {t('launchStudio')} <ArrowRight className="ms-2 h-4 w-4" />
+                {t('launchStudio')} <ArrowRight className={`${isRtl ? 'mr-2 rtl-mirror' : 'ml-2'} h-4 w-4`} />
               </Link>
             </Button>
           </div>

@@ -3,9 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Tv } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/lib/language-context";
 
 const StudioPage = () => {
   const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
+  const isRtl = currentLanguage.direction === 'rtl';
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -18,7 +21,7 @@ const StudioPage = () => {
         </p>
         <Button asChild size="lg" className="bg-castify-purple hover:bg-castify-purple/90">
           <Link to="/dashboard">
-            <Tv className="mr-2 h-5 w-5" />
+            <Tv className={`${isRtl ? 'ml-2' : 'mr-2'} h-5 w-5`} />
             {t('launchStudio')}
           </Link>
         </Button>

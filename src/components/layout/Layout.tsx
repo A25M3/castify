@@ -12,6 +12,13 @@ export default function Layout() {
     // Set the direction attribute on the document element
     document.documentElement.dir = currentLanguage.direction;
     document.documentElement.lang = currentLanguage.code;
+    
+    // Add a class to the body for RTL-specific global styles if needed
+    if (currentLanguage.direction === 'rtl') {
+      document.body.classList.add('rtl-layout');
+    } else {
+      document.body.classList.remove('rtl-layout');
+    }
   }, [currentLanguage]);
 
   return (

@@ -1,9 +1,12 @@
 
 import { Shield, ShieldCheck, ShieldAlert } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/lib/language-context";
 
 const SafetyPage = () => {
   const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
+  const isRtl = currentLanguage.direction === 'rtl';
   
   return (
     <div className="container mx-auto px-4 py-16">
