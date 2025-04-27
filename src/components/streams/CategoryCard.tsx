@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguage } from '@/lib/language-context';
 
 interface CategoryCardProps {
   id: number;
@@ -11,6 +12,8 @@ interface CategoryCardProps {
 
 const CategoryCard = ({ id, name, imageUrl, viewers }: CategoryCardProps) => {
   const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
+  const isRtl = currentLanguage.direction === 'rtl';
 
   return (
     <Link to={`/category/${id}`} className="group block">

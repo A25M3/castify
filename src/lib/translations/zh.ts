@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "首页",

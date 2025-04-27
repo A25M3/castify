@@ -14,10 +14,13 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/lib/auth-context';
 import { categories } from '@/lib/mock-data';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function Header() {
   const { t } = useTranslation();
   const { isAuthenticated, user, logout } = useAuth();
+  const { currentLanguage } = useLanguage();
+  const isRtl = currentLanguage.direction === 'rtl';
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
@@ -60,25 +63,25 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-8 rtl:space-x-reverse">
           <Link to="/" className="flex items-center">
             <span className="text-2xl font-bold bg-gradient-to-r from-castify-purple to-castify-blue bg-clip-text text-transparent">
               Castify
             </span>
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
             <Link to="/" className="text-foreground/90 hover:text-castify-purple transition flex items-center gap-1.5">
-              <Home size={18} />
+              <Home size={18} className={isRtl ? "ml-1.5" : "mr-1.5"} />
               <span>{t('home')}</span>
             </Link>
             <Link to="/browse" className="text-foreground/90 hover:text-castify-purple transition flex items-center gap-1.5">
-              <Layers size={18} />
+              <Layers size={18} className={isRtl ? "ml-1.5" : "mr-1.5"} />
               <span>{t('browse')}</span>
             </Link>
             {isAuthenticated && (
               <Link to="/following" className="text-foreground/90 hover:text-castify-purple transition flex items-center gap-1.5">
-                <Video size={18} />
+                <Video size={18} className={isRtl ? "ml-1.5" : "mr-1.5"} />
                 <span>{t('following')}</span>
               </Link>
             )}
@@ -87,11 +90,11 @@ export default function Header() {
 
         <div className="flex-1 max-w-xl mx-4 relative" ref={searchRef}>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className={`absolute ${isRtl ? 'right-3' : 'left-3'} top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground`} />
             <Input
               type="text"
               placeholder={t('search')}
-              className="pl-10 bg-muted border-muted rounded-full"
+              className={`${isRtl ? 'pr-10' : 'pl-10'} bg-muted border-muted rounded-full`}
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
@@ -122,7 +125,7 @@ export default function Header() {
                       <img 
                         src={category.imageUrl} 
                         alt={category.name} 
-                        className="w-8 h-8 rounded object-cover mr-3" 
+                        className={`w-8 h-8 rounded object-cover ${isRtl ? 'ml-3' : 'mr-3'}`}
                       />
                       <div>
                         <p className="font-medium">{category.name}</p>
@@ -150,17 +153,17 @@ export default function Header() {
           )}
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 rtl:space-x-reverse">
           {isAuthenticated ? (
             <>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="relative">
                     <Bell className="h-5 w-5" />
-                    <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-castify-pink"></span>
+                    <span className={`absolute top-1 ${isRtl ? 'left-1' : 'right-1'} h-2 w-2 rounded-full bg-castify-pink`}></span>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-80">
+                <DropdownMenuContent align={isRtl ? "start" : "end"} className="w-80">
                   <div className="p-4">
                     <h3 className="font-medium mb-2">{t('notifications')}</h3>
                     <div className="space-y-3">
@@ -174,7 +177,7 @@ export default function Header() {
                             <span className="font-medium">StreamerX</span> {t('justWentLive')}
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            {t('minutesAgo').replace('{count}', '20')}
+                            {t('minutesAgo', { count: '20' })}
                           </p>
                         </div>
                       </div>
@@ -188,7 +191,7 @@ export default function Header() {
                             <span className="font-medium">GamingPro</span> {t('followed')}
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            {t('hoursAgo').replace('{count}', '2')}
+                            {t('hoursAgo', { count: '2' })}
                           </p>
                         </div>
                       </div>
@@ -208,31 +211,31 @@ export default function Header() {
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuContent align={isRtl ? "start" : "end"} className="w-56">
                   <Link to={`/channel/${user?.username}`}>
                     <DropdownMenuItem>
-                      <User className="mr-2 h-4 w-4" /> {t('myChannel')}
+                      <User className={`h-4 w-4 ${isRtl ? 'ml-2' : 'mr-2'}`} /> {t('myChannel')}
                     </DropdownMenuItem>
                   </Link>
                   <Link to="/dashboard">
                     <DropdownMenuItem>
-                      <Video className="mr-2 h-4 w-4" /> {t('creatorDashboard')}
+                      <Video className={`h-4 w-4 ${isRtl ? 'ml-2' : 'mr-2'}`} /> {t('creatorDashboard')}
                     </DropdownMenuItem>
                   </Link>
                   <Link to="/settings">
                     <DropdownMenuItem>
-                      <Settings className="mr-2 h-4 w-4" /> {t('settings')}
+                      <Settings className={`h-4 w-4 ${isRtl ? 'ml-2' : 'mr-2'}`} /> {t('settings')}
                     </DropdownMenuItem>
                   </Link>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={logout}>
-                    <LogOut className="mr-2 h-4 w-4" /> {t('logout')}
+                    <LogOut className={`h-4 w-4 ${isRtl ? 'ml-2' : 'mr-2'}`} /> {t('logout')}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </>
           ) : (
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <Link to="/login">
                 <Button variant="ghost" size="sm">{t('login')}</Button>
               </Link>

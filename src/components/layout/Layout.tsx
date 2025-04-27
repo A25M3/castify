@@ -2,8 +2,18 @@
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import { useLanguage } from '@/lib/language-context';
+import { useEffect } from 'react';
 
 export default function Layout() {
+  const { currentLanguage } = useLanguage();
+
+  useEffect(() => {
+    // Set the direction attribute on the document element
+    document.documentElement.dir = currentLanguage.direction;
+    document.documentElement.lang = currentLanguage.code;
+  }, [currentLanguage]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

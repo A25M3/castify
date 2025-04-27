@@ -132,6 +132,50 @@
     content: "";
     @apply absolute w-2 h-2 bg-white rounded-full animate-pulse -left-1 top-1/2 -translate-y-1/2;
   }
+  
+  /* RTL Support */
+  [dir="rtl"] .live-indicator::before {
+    @apply -left-auto -right-1;
+  }
+  
+  /* RTL specific utility classes */
+  [dir="rtl"] .rtl-mirror {
+    transform: scaleX(-1);
+  }
+  
+  [dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]),
+  [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]),
+  [dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]),
+  [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]),
+  [dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]),
+  [dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+  
+  /* Support for border radiuses in RTL mode */
+  [dir="rtl"] .rounded-l-md {
+    @apply rounded-r-md rounded-l-none;
+  }
+  
+  [dir="rtl"] .rounded-r-md {
+    @apply rounded-l-md rounded-r-none;
+  }
+  
+  [dir="rtl"] .rounded-tl-md {
+    @apply rounded-tr-md rounded-tl-none;
+  }
+  
+  [dir="rtl"] .rounded-tr-md {
+    @apply rounded-tl-md rounded-tr-none;
+  }
+  
+  [dir="rtl"] .rounded-bl-md {
+    @apply rounded-br-md rounded-bl-none;
+  }
+  
+  [dir="rtl"] .rounded-br-md {
+    @apply rounded-bl-md rounded-br-none;
+  }
 }
 
 #root {

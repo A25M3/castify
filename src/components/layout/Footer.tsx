@@ -14,6 +14,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 export default function Footer() {
   const year = new Date().getFullYear();
   const { currentLanguage, setLanguage } = useLanguage();
+  const isRtl = currentLanguage.direction === 'rtl';
   const { t } = useTranslation();
 
   return (
@@ -28,7 +29,7 @@ export default function Footer() {
             <p className="text-muted-foreground">
               The next generation streaming platform for creators and audiences.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 rtl:space-x-reverse">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
                 <Facebook size={20} />
               </a>
@@ -147,7 +148,7 @@ export default function Footer() {
                   {currentLanguage.name}
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-[200px]">
+              <DropdownMenuContent align={isRtl ? "start" : "end"} className="w-[200px]">
                 {languages.map((lang) => (
                   <DropdownMenuItem 
                     key={lang.code}
@@ -164,7 +165,7 @@ export default function Footer() {
         
         <div className="mt-6 text-center text-xs text-muted-foreground">
           <p className="flex items-center justify-center gap-1">
-            {t("madeWith")} <Heart size={12} className="text-castify-pink" /> by CASTIFY
+            {t("madeWith")} <Heart size={12} className="text-castify-pink mx-1" /> by CASTIFY
           </p>
         </div>
       </div>
