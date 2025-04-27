@@ -225,5 +225,6 @@ export default {
   newsDate2: "2025年4月20日",
   newsTitle2: "平台增长超出预期",
   newsDate3: "2025年4月15日",
-  newsTitle3: "推出新的合作伙伴计划",
+  newsTitle3: "推出新的合作伙伴计划"
 } as const;
+

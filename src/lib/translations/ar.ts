@@ -225,5 +225,6 @@ export default {
   newsDate2: "20 أبريل 2025",
   newsTitle2: "نمو المنصة يفوق التوقعات",
   newsDate3: "15 أبريل 2025",
-  newsTitle3: "إطلاق برنامج الشراكة الجديد",
+  newsTitle3: "إطلاق برنامج الشراكة الجديد"
 } as const;
+

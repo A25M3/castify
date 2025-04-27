@@ -23,6 +23,9 @@ export default {
   about: "Chi Siamo",
   careers: "Carriere",
   brand: "Brand",
+  terms: "Termini di Servizio",
+  privacy: "Politica sulla Privacy",
+  cookies: "Impostazioni Cookie",
   
   // Auth
   login: "Accedi",
@@ -222,5 +225,6 @@ export default {
   newsDate2: "20 Aprile 2025",
   newsTitle2: "Crescita della Piattaforma Supera le Aspettative",
   newsDate3: "15 Aprile 2025",
-  newsTitle3: "Lanciato Nuovo Programma Partnership",
+  newsTitle3: "Lanciato Nuovo Programma Partnership"
 } as const;
+

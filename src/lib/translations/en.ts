@@ -225,5 +225,6 @@ export default {
   newsDate2: "April 20, 2025",
   newsTitle2: "Platform Growth Exceeds Expectations",
   newsDate3: "April 15, 2025",
-  newsTitle3: "New Partnership Program Launched",
+  newsTitle3: "New Partnership Program Launched"
 } as const;
+
