@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/lib/auth-context';
 import { categories } from '@/lib/mock-data';
-import { useLanguage } from '@/hooks/useLanguage';
+import { useLanguage } from '@/lib/language-context';
 
 export default function Header() {
   const { t } = useTranslation();

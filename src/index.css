@@ -135,7 +135,7 @@
   
   /* RTL Support */
   [dir="rtl"] .live-indicator::before {
-    @apply -left-auto -right-1;
+    @apply left-auto -right-1;
   }
   
   /* RTL specific utility classes */
