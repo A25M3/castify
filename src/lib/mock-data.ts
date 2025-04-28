@@ -285,3 +285,33 @@ export const recommendedStreamers = [
     viewers: 87,
   },
 ];
+
+// Mock function to generate chat messages
+export const generateChatMessages = (count: number) => {
+  const users = ['StreamFan123', 'GameLover', 'TwitchViewer', 'CastifyUser', 'ChatEnjoyer', 'StreamerFan', 'GamingPro'];
+  const messages = [
+    'Hello everyone!',
+    'Great stream today!',
+    'LOL that was hilarious',
+    'How long have you been streaming?',
+    'What game is next?',
+    'Can you do a tutorial on this?',
+    'The graphics look amazing',
+    'That was an incredible play!',
+    'I love this song',
+    'Where can I find your schedule?',
+    'Just subscribed!',
+  ];
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: Date.now() + i,
+    username: users[Math.floor(Math.random() * users.length)],
+    message: messages[Math.floor(Math.random() * messages.length)],
+    timestamp: new Date(Date.now() - Math.floor(Math.random() * 600000)), // Random time in the last 10 minutes
+    isSubscriber: Math.random() > 0.7,
+    isModerator: Math.random() > 0.9,
+  }));
+};
+
+// Export streamers for Category and Channel pages
+export const streamers = [...trendingStreamers, ...recommendedStreamers];

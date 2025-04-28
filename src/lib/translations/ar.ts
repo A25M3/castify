@@ -1,10 +1,10 @@
-
 export default {
   // Navigation
   home: "الرئيسية",
   browse: "تصفح",
   following: "المتابَعون",
   recommended: "موصى به",
+  toSeeFollowing: "لمشاهدة المتابَعين",
   
   // Footer sections
   platform: "المنصة",
@@ -190,13 +190,8 @@ export default {
   safetyResources: "موارد السلامة",
   safetyResourcesDesc: "تعرف على إرشادات المجتمع وإجراءات السلامة لدينا.",
   creatorResourcesDesc: "الوصول إلى الأدلة والموارد لتنمية قناتك.",
-  partnerProgram: "برنامج الشركاء",
-  partnerProgramDesc: "تعرف على كيفية أن تصبح شريكًا في كاستيفاي.",
-  browseFAQs: "تصفح الأسئلة الشائعة",
-  creatorGuide: "دليل المبدعين",
-  partnerInfo: "معلومات الشركاء",
 
-  // Partners
+  // Partner Program
   partnerProgram: "برنامج الشركاء",
   partnerProgramDesc: "انضم إلى برنامج شركائنا الحصري وارتقِ بمسيرتك في البث المباشر إلى آفاق جديدة.",
   requirements: "المتطلبات",

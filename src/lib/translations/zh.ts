@@ -20,7 +20,6 @@ export default {
   safetyCenter: "安全中心",
   creatorResources: "创作者资源",
   partners: "合作伙伴",
-  press: "媒体报道",
   about: "关于我们",
   careers: "职业机会",
   brand: "品牌",
@@ -124,7 +123,7 @@ export default {
   ourMission: "我们的使命",
   missionDescription: "赋能创作者与世界分享激情，通过直播建立有意义的联系。",
   ourVision: "我们的愿景",
-  visionDescription: "成为最具创作者友好性和��新性的流媒体平台，树立直播娱乐的新标准。",
+  visionDescription: "成为最具创作者友好性和创新性的流媒体平台，树立直播娱乐的新标准。",
   joinTeam: "加入我们的团队",
   pressKit: "媒体资料包",
 
@@ -190,13 +189,8 @@ export default {
   safetyResources: "安全资源",
   safetyResourcesDesc: "了解我们的社区准则和安全措施。",
   creatorResourcesDesc: "获取帮助您发展频道的指南和资源。",
-  partnerProgram: "合作伙伴计划",
-  partnerProgramDesc: "了解如何成为 Castify 合作伙伴。",
-  browseFAQs: "浏览常见问题",
-  creatorGuide: "创作者指南",
-  partnerInfo: "合作伙伴信息",
 
-  // Partners
+  // Partner Program
   partnerProgram: "合作伙伴计划", 
   partnerProgramDesc: "加入我们的专属合作伙伴计划，将您的直播事业提升到新高度。",
   requirements: "要求",

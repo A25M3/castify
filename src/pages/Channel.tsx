@@ -1,286 +1,197 @@
 
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Heart, Share, Bell, Users, Calendar, Clock, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Heart, Users, Calendar, Bell, Play } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { useToast } from '@/hooks/use-toast';
-import { streamers } from '@/lib/mock-data';
 import VideoPlayer from '@/components/streams/VideoPlayer';
 import ChatBox from '@/components/streams/ChatBox';
-import { useAuth } from '@/lib/auth-context';
+import { useTranslation } from '@/hooks/useTranslation';
+import { streamers } from '@/lib/mock-data';
 
-const ChannelPage = () => {
-  const { username } = useParams<{ username: string }>();
-  const { isAuthenticated } = useAuth();
-  const { toast } = useToast();
-  const [isFollowing, setIsFollowing] = useState(false);
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  
-  // Find streamer data
-  const streamer = streamers.find(s => s.username === username);
-  
-  // Handle follow button
-  const handleFollow = () => {
-    if (!isAuthenticated) {
-      toast({
-        title: "Login required",
-        description: "You need to login to follow channels",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    setIsFollowing(!isFollowing);
-    toast({
-      title: isFollowing ? "Unfollowed" : "Followed",
-      description: isFollowing 
-        ? `You've unfollowed ${streamer?.displayName || username}`
-        : `You're now following ${streamer?.displayName || username}`,
-    });
-  };
-  
-  // Handle subscribe button
-  const handleSubscribe = () => {
-    if (!isAuthenticated) {
-      toast({
-        title: "Login required",
-        description: "You need to login to subscribe to channels",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    toast({
-      title: "Subscription",
-      description: isSubscribed 
-        ? "Subscription management coming soon"
-        : "Subscription options coming soon",
-    });
-  };
-  
-  // If streamer doesn't exist, show error
-  if (!streamer) {
-    return (
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center py-16">
-          <h1 className="text-2xl font-bold mb-4">Channel not found</h1>
-          <p className="text-muted-foreground mb-6">The channel you're looking for doesn't exist or may have been renamed.</p>
-          <Button asChild>
-            <Link to="/">Back to Home</Link>
-          </Button>
-        </div>
-      </div>
-    );
+export default function ChannelPage() {
+  const { username } = useParams();
+  const { t } = useTranslation();
+  const [channel, setChannel] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch streamer by username
+    const streamer = streamers.find(s => s.username === username);
+    setChannel(streamer);
+    setLoading(false);
+  }, [username]);
+
+  if (loading) {
+    return <div className="container mx-auto px-4 py-12 text-center">{t('loading')}</div>;
   }
 
+  if (!channel) {
+    return <div className="container mx-auto px-4 py-12 text-center">{t('error')}</div>;
+  }
+
+  const isLive = channel.isLive !== undefined ? channel.isLive : false;
+
   return (
-    <div className="min-h-screen pb-16">
-      {/* Channel Header/Banner */}
-      <div 
-        className="h-48 md:h-64 bg-cover bg-center relative"
-        style={{ backgroundImage: `url(${streamer.bannerUrl})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+    <div className="container mx-auto px-4 py-8">
+      {/* Channel Header */}
+      <div className="flex flex-col lg:flex-row gap-6 mb-6">
+        <div className="flex-shrink-0">
+          <Avatar className="h-24 w-24 border-4 border-background">
+            <AvatarImage src={channel.avatarUrl} />
+            <AvatarFallback>{channel.displayName[0]}</AvatarFallback>
+          </Avatar>
+        </div>
+        <div className="flex-grow space-y-2">
+          <div className="flex items-center gap-3">
+            <h1 className="text-3xl font-bold">{channel.displayName}</h1>
+            {isLive && (
+              <Badge className="bg-red-500 hover:bg-red-500/90">
+                {t('live')}
+              </Badge>
+            )}
+          </div>
+          
+          <div className="text-muted-foreground">@{channel.username}</div>
+          
+          <div className="flex items-center gap-4 text-sm">
+            <div className="flex items-center gap-1">
+              <Heart className="h-4 w-4" />
+              <span>{Math.floor(channel.viewers * 0.7)} {t('followers')}</span>
+            </div>
+            {isLive && (
+              <div className="flex items-center gap-1">
+                <Users className="h-4 w-4" />
+                <span>{channel.viewers} {t('viewers')}</span>
+              </div>
+            )}
+          </div>
+          
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Button className="bg-castify-purple hover:bg-castify-purple/90">
+              <Heart className="mr-2 h-4 w-4" /> Follow
+            </Button>
+            <Button variant="outline">
+              <Bell className="mr-2 h-4 w-4" /> Subscribe
+            </Button>
+          </div>
+        </div>
       </div>
       
-      <div className="container mx-auto px-4">
-        {/* Channel Info */}
-        <div className="flex flex-col md:flex-row md:items-end -mt-16 md:-mt-20 mb-8 relative z-10">
-          <Avatar className="h-32 w-32 border-4 border-background rounded-full">
-            <AvatarImage src={streamer.avatarUrl} />
-            <AvatarFallback>{streamer.displayName?.charAt(0) || streamer.username.charAt(0)}</AvatarFallback>
-          </Avatar>
+      {/* Stream Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="lg:col-span-2">
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <VideoPlayer thumbnailUrl={channel.thumbnail} isLive={isLive} />
+          </div>
           
-          <div className="md:ml-6 mt-4 md:mt-0 flex-1">
-            <div className="flex flex-col md:flex-row md:items-center justify-between">
-              <div>
-                <h1 className="text-3xl font-bold">{streamer.displayName || streamer.username}</h1>
-                <p className="text-muted-foreground mb-2">@{streamer.username}</p>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <div className="flex items-center mr-4">
-                    <Users size={16} className="mr-1.5" />
-                    {streamer.followers.toLocaleString()} followers
-                  </div>
-                  {streamer.isLive && (
-                    <div className="live-indicator">
-                      LIVE
-                    </div>
-                  )}
-                </div>
-              </div>
-              
-              <div className="flex mt-4 md:mt-0 gap-2">
-                <Button 
-                  onClick={handleFollow}
-                  variant={isFollowing ? "outline" : "default"}
-                  className={isFollowing 
-                    ? "border-castify-purple text-castify-purple hover:bg-castify-purple/10"
-                    : "bg-castify-purple hover:bg-castify-purple/90"
-                  }
-                >
-                  <Heart className={`mr-1 h-4 w-4 ${isFollowing ? "fill-castify-purple" : ""}`} />
-                  {isFollowing ? 'Following' : 'Follow'}
-                </Button>
-                
-                <Button 
-                  onClick={handleSubscribe}
-                  variant={isSubscribed ? "outline" : "default"}
-                  className={isSubscribed 
-                    ? "border-castify-pink text-castify-pink"
-                    : "bg-castify-pink hover:bg-castify-pink/90"
-                  }
-                >
-                  {isSubscribed ? 'Subscribed' : 'Subscribe'}
-                </Button>
-                
-                <Button variant="outline" size="icon">
-                  <Bell className="h-4 w-4" />
-                </Button>
-                
-                <Button variant="outline" size="icon">
-                  <Share className="h-4 w-4" />
-                </Button>
-              </div>
+          <div className="mt-4">
+            <h2 className="text-xl font-bold mb-2">{channel.title}</h2>
+            <div className="flex items-center gap-2">
+              <Badge variant="outline">{channel.game}</Badge>
+              {isLive && (
+                <span className="text-sm text-muted-foreground">
+                  {t('startedStreaming', { time: '2 hours' })}
+                </span>
+              )}
             </div>
           </div>
         </div>
         
-        {/* Channel Content */}
-        <div className="space-y-6">
-          {/* Live Stream Or Offline Content */}
-          {streamer.isLive ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2 space-y-4">
-                <VideoPlayer thumbnailUrl={streamer.thumbnail} isLive={true} />
-                
-                <div>
-                  <h1 className="text-2xl font-bold mb-2">{streamer.title}</h1>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <div className="flex items-center mr-4">
-                      <Users size={16} className="mr-1.5" />
-                      {streamer.viewers.toLocaleString()} viewers
-                    </div>
-                    <Link 
-                      to={`/category/${streamer.gameId}`} 
-                      className="hover:text-castify-purple transition"
-                    >
-                      {streamer.game}
-                    </Link>
-                    {streamer.tags.map((tag, i) => (
-                      <span key={i} className="ml-2 px-2 py-1 bg-muted rounded-md text-xs">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <Tabs defaultValue="about">
-                  <TabsList className="w-full justify-start border-b rounded-none bg-transparent">
-                    <TabsTrigger value="about">About</TabsTrigger>
-                    <TabsTrigger value="schedule">Schedule</TabsTrigger>
-                    <TabsTrigger value="videos">Videos</TabsTrigger>
-                    <TabsTrigger value="clips">Clips</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="about" className="mt-4">
-                    <div className="prose prose-invert max-w-none">
-                      <p>{streamer.bio}</p>
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="schedule" className="mt-4">
-                    <div className="flex items-center justify-center h-48 border border-dashed border-border rounded-lg">
-                      <div className="text-center">
-                        <Calendar className="h-10 w-10 mx-auto text-muted-foreground mb-2" />
-                        <p className="text-muted-foreground">Streaming schedule coming soon</p>
-                      </div>
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="videos" className="mt-4">
-                    <div className="flex items-center justify-center h-48 border border-dashed border-border rounded-lg">
-                      <div className="text-center">
-                        <Clock className="h-10 w-10 mx-auto text-muted-foreground mb-2" />
-                        <p className="text-muted-foreground">Past broadcasts coming soon</p>
-                      </div>
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="clips" className="mt-4">
-                    <div className="flex items-center justify-center h-48 border border-dashed border-border rounded-lg">
-                      <div className="text-center">
-                        <ExternalLink className="h-10 w-10 mx-auto text-muted-foreground mb-2" />
-                        <p className="text-muted-foreground">Popular clips coming soon</p>
-                      </div>
-                    </div>
-                  </TabsContent>
-                </Tabs>
-              </div>
-              
-              <div className="h-[calc(100vh-400px)] min-h-[500px]">
-                <ChatBox />
-              </div>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              <div className="flex items-center justify-center py-20 border border-dashed border-border rounded-lg bg-muted/30">
-                <div className="text-center max-w-md">
-                  <h2 className="text-2xl font-semibold mb-2">{streamer.displayName || streamer.username} is offline</h2>
-                  <p className="text-muted-foreground mb-6">
-                    {streamer.lastSeen 
-                      ? `Last seen ${new Date(streamer.lastSeen).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}`
-                      : 'Check back later to catch them live'
-                    }
-                  </p>
-                  <Button onClick={handleFollow} className="bg-castify-purple hover:bg-castify-purple/90">
-                    <Bell className="mr-1.5 h-4 w-4" />
-                    Get notified when they go live
-                  </Button>
-                </div>
-              </div>
-              
-              <Tabs defaultValue="about">
-                <TabsList className="w-full justify-start border-b rounded-none bg-transparent">
-                  <TabsTrigger value="about">About</TabsTrigger>
-                  <TabsTrigger value="schedule">Schedule</TabsTrigger>
-                  <TabsTrigger value="videos">Videos</TabsTrigger>
-                  <TabsTrigger value="clips">Clips</TabsTrigger>
-                </TabsList>
-                <TabsContent value="about" className="mt-6">
-                  <div className="prose prose-invert max-w-none">
-                    <p>{streamer.bio}</p>
-                  </div>
-                </TabsContent>
-                {/* Same tab content as above */}
-                <TabsContent value="schedule" className="mt-4">
-                  <div className="flex items-center justify-center h-48 border border-dashed border-border rounded-lg">
-                    <div className="text-center">
-                      <Calendar className="h-10 w-10 mx-auto text-muted-foreground mb-2" />
-                      <p className="text-muted-foreground">Streaming schedule coming soon</p>
-                    </div>
-                  </div>
-                </TabsContent>
-                <TabsContent value="videos" className="mt-4">
-                  <div className="flex items-center justify-center h-48 border border-dashed border-border rounded-lg">
-                    <div className="text-center">
-                      <Clock className="h-10 w-10 mx-auto text-muted-foreground mb-2" />
-                      <p className="text-muted-foreground">Past broadcasts coming soon</p>
-                    </div>
-                  </div>
-                </TabsContent>
-                <TabsContent value="clips" className="mt-4">
-                  <div className="flex items-center justify-center h-48 border border-dashed border-border rounded-lg">
-                    <div className="text-center">
-                      <ExternalLink className="h-10 w-10 mx-auto text-muted-foreground mb-2" />
-                      <p className="text-muted-foreground">Popular clips coming soon</p>
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
-            </div>
-          )}
+        <div className="lg:col-span-1 h-[500px]">
+          <ChatBox />
         </div>
       </div>
+      
+      {/* Channel Content Tabs */}
+      <Tabs defaultValue="videos">
+        <TabsList>
+          <TabsTrigger value="videos">Videos</TabsTrigger>
+          <TabsTrigger value="about">About</TabsTrigger>
+          <TabsTrigger value="schedule">Schedule</TabsTrigger>
+        </TabsList>
+        
+        <TabsContent value="videos" className="py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="group relative rounded-lg overflow-hidden">
+              <div className="aspect-video bg-muted relative">
+                <img 
+                  src={channel.thumbnail} 
+                  alt="Video thumbnail" 
+                  className="w-full h-full object-cover" 
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Play className="h-12 w-12 text-white" />
+                </div>
+                <span className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 text-white text-xs rounded">
+                  1:24:38
+                </span>
+              </div>
+              <div className="p-2">
+                <h3 className="font-medium truncate">Previous Stream Highlights</h3>
+                <p className="text-sm text-muted-foreground">3 days ago • 10K views</p>
+              </div>
+            </div>
+          </div>
+        </TabsContent>
+        
+        <TabsContent value="about" className="py-6">
+          <div className="max-w-3xl">
+            <h3 className="text-xl font-medium mb-4">About {channel.displayName}</h3>
+            <p className="text-muted-foreground mb-6">
+              Welcome to my channel! I stream a variety of games and love interacting with my viewers.
+              Make sure to follow for stream notifications and join our community!
+            </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 bg-muted rounded-lg">
+                <h4 className="font-medium mb-2">Schedule</h4>
+                <div className="text-sm space-y-1 text-muted-foreground">
+                  <p>Monday: 7PM - 11PM</p>
+                  <p>Wednesday: 7PM - 11PM</p>
+                  <p>Friday: 8PM - 1AM</p>
+                  <p>Saturday: 3PM - 8PM</p>
+                </div>
+              </div>
+              
+              <div className="p-4 bg-muted rounded-lg">
+                <h4 className="font-medium mb-2">Social Media</h4>
+                <div className="text-sm space-y-1">
+                  <p><a href="#" className="text-castify-purple hover:underline">Twitter</a></p>
+                  <p><a href="#" className="text-castify-purple hover:underline">Instagram</a></p>
+                  <p><a href="#" className="text-castify-purple hover:underline">Discord</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </TabsContent>
+        
+        <TabsContent value="schedule" className="py-6">
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="h-16 w-16 rounded-lg bg-castify-purple/10 flex items-center justify-center">
+                <Calendar className="h-8 w-8 text-castify-purple" />
+              </div>
+              <div>
+                <h3 className="font-medium">Next stream: Friday, Apr 30 at 8:00 PM</h3>
+                <p className="text-muted-foreground">Playing: {channel.game}</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="p-4 border border-border rounded-lg">
+                  <div className="font-medium">Monday, May 3</div>
+                  <div className="text-sm text-muted-foreground">7:00 PM - 11:00 PM</div>
+                  <div className="mt-2 text-sm">Game: To be announced</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
-};
-
-export default ChannelPage;
+}

@@ -1,10 +1,10 @@
-
 export default {
   // Navigation
   home: "Home",
   browse: "Browse",
   following: "Following",
   recommended: "Recommended",
+  toSeeFollowing: "to see followed streamers",
 
   // Footer sections
   platform: "Platform",
@@ -196,7 +196,7 @@ export default {
   creatorGuide: "Creator Guide",
   partnerInfo: "Partner Info",
 
-  // Partners
+  // Partners Page
   partnerProgram: "Partner Program",
   partnerProgramDesc: "Join our exclusive partner program and take your streaming career to new heights.",
   requirements: "Requirements",

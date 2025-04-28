@@ -1,10 +1,10 @@
-
 export default {
   // Navigation
   home: "Home",
   browse: "Esplora",
   following: "Seguiti",
   recommended: "Raccomandati",
+  toSeeFollowing: "per vedere gli streamer seguiti",
   
   // Footer sections
   platform: "Piattaforma",
@@ -190,13 +190,6 @@ export default {
   safetyResources: "Risorse di Sicurezza",
   safetyResourcesDesc: "Scopri le nostre linee guida comunitarie e misure di sicurezza.",
   creatorResourcesDesc: "Accedi a guide e risorse per far crescere il tuo canale.",
-  partnerProgram: "Programma Partner",
-  partnerProgramDesc: "Scopri come diventare un Partner Castify.",
-  browseFAQs: "Sfoglia le FAQ",
-  creatorGuide: "Guida per Creatori",
-  partnerInfo: "Info Partner",
-
-  // Partners
   partnerProgram: "Programma Partner",
   partnerProgramDesc: "Unisciti al nostro programma partner esclusivo e porta la tua carriera di streaming a nuovi livelli.",
   requirements: "Requisiti",
