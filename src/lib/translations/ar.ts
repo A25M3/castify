@@ -1,4 +1,3 @@
-
 export default {
   // Navigation
   home: "الرئيسية",
@@ -53,7 +52,7 @@ export default {
   seeAll: "عرض الكل",
   popularCategories: "الفئات الشائعة",
   viewAll: "عرض الكل",
-  recommendedStreams: "البثوث الموصى بها",
+  recommendedStreams: "البثوث الموصى بهم",
   seeMore: "عرض المزيد",
   joinCommunity: "انضم إلى مجتمع كاستيفاي",
   joinCommunityDesc: "أنشئ حسابًا لتتابع مذيعيك المفضلين، وشارك في الدردشات، واستلم إشعارات عندما يكونون مباشرين.",
