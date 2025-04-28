@@ -4,6 +4,7 @@ export default {
   home: "Home",
   browse: "Browse",
   following: "Following",
+  recommended: "Recommended",
 
   // Footer sections
   platform: "Platform",
@@ -227,4 +228,3 @@ export default {
   newsDate3: "April 15, 2025",
   newsTitle3: "New Partnership Program Launched"
 } as const;
-

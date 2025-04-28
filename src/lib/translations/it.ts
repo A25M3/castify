@@ -4,6 +4,7 @@ export default {
   home: "Home",
   browse: "Esplora",
   following: "Seguiti",
+  recommended: "Raccomandati",
   
   // Footer sections
   platform: "Piattaforma",
@@ -227,4 +228,3 @@ export default {
   newsDate3: "15 Aprile 2025",
   newsTitle3: "Lanciato Nuovo Programma Partnership"
 } as const;
-

@@ -4,6 +4,7 @@ export default {
   home: "首页",
   browse: "浏览",
   following: "关注",
+  recommended: "推荐",
 
   // Footer sections
   platform: "平台",
@@ -227,4 +228,3 @@ export default {
   newsDate3: "2025年4月15日",
   newsTitle3: "推出新的合作伙伴计划"
 } as const;
-

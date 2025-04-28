@@ -4,6 +4,7 @@ export default {
   home: "الرئيسية",
   browse: "تصفح",
   following: "المتابَعون",
+  recommended: "موصى به",
   
   // Footer sections
   platform: "المنصة",
@@ -227,4 +228,3 @@ export default {
   newsDate3: "15 أبريل 2025",
   newsTitle3: "إطلاق برنامج الشراكة الجديد"
 } as const;
-
