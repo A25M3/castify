@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { useLanguage } from '@/lib/language-context';
 import { useEffect } from 'react';
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from './AppSidebar';
 
 export default function Layout() {
