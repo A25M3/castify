@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "首页",
@@ -196,6 +197,7 @@ export default {
   partnerInfo: "合作伙伴信息",
 
   // Partners
+  partnerProgram: "合作伙伴计划", 
   partnerProgramDesc: "加入我们的专属合作伙伴计划，将您的直播事业提升到新高度。",
   requirements: "要求",
   reqStreamHours: "过去30天内直播25小时",

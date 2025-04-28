@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "Home",
@@ -196,6 +197,7 @@ export default {
   partnerInfo: "Partner Info",
 
   // Partners
+  partnerProgram: "Partner Program",
   partnerProgramDesc: "Join our exclusive partner program and take your streaming career to new heights.",
   requirements: "Requirements",
   reqStreamHours: "Stream for 25 hours in the last 30 days",

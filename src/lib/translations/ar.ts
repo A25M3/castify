@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "الرئيسية",
@@ -196,6 +197,7 @@ export default {
   partnerInfo: "معلومات الشركاء",
 
   // Partners
+  partnerProgram: "برنامج الشركاء",
   partnerProgramDesc: "انضم إلى برنامج شركائنا الحصري وارتقِ بمسيرتك في البث المباشر إلى آفاق جديدة.",
   requirements: "المتطلبات",
   reqStreamHours: "البث لمدة 25 ساعة في آخر 30 يومًا",

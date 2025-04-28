@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "Home",
@@ -196,6 +197,7 @@ export default {
   partnerInfo: "Info Partner",
 
   // Partners
+  partnerProgram: "Programma Partner",
   partnerProgramDesc: "Unisciti al nostro programma partner esclusivo e porta la tua carriera di streaming a nuovi livelli.",
   requirements: "Requisiti",
   reqStreamHours: "Streamma per 25 ore negli ultimi 30 giorni",
