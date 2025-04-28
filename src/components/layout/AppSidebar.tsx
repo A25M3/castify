@@ -15,11 +15,15 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "@/hooks/useTranslation";
 import { trendingStreamers } from "@/lib/mock-data";
+import { useAuth } from "@/lib/auth-context";
 
 export function AppSidebar() {
   const { t } = useTranslation();
-  const followedStreamers = trendingStreamers.slice(0, 3); // Mock followed streamers
-  const recommendedStreamers = trendingStreamers.slice(3, 6); // Mock recommended streamers
+  const { isAuthenticated } = useAuth();
+  
+  // Mock data - in a real app, this would come from the user's profile
+  const followedStreamers = trendingStreamers.slice(0, 5); // Show 5 followed streamers
+  const recommendedStreamers = trendingStreamers.slice(5, 10); // Show 5 recommended streamers
 
   return (
     <Sidebar variant="sidebar" collapsible="icon">
@@ -53,19 +57,30 @@ export function AppSidebar() {
           <SidebarGroupLabel>{t('following')}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {followedStreamers.map((streamer) => (
-                <SidebarMenuItem key={streamer.id}>
-                  <SidebarMenuButton asChild tooltip={streamer.displayName}>
-                    <Link to={`/channel/${streamer.username}`}>
-                      <Avatar className="h-5 w-5">
-                        <AvatarImage src={streamer.avatarUrl} />
-                        <AvatarFallback>{streamer.username[0].toUpperCase()}</AvatarFallback>
-                      </Avatar>
-                      <span>{streamer.displayName}</span>
-                    </Link>
-                  </SidebarMenuButton>
+              {isAuthenticated ? (
+                followedStreamers.map((streamer) => (
+                  <SidebarMenuItem key={streamer.id}>
+                    <SidebarMenuButton asChild tooltip={streamer.displayName}>
+                      <Link to={`/channel/${streamer.username}`} className="flex items-center">
+                        <Avatar className="h-6 w-6 mr-2">
+                          <AvatarImage src={streamer.avatarUrl} />
+                          <AvatarFallback>{streamer.username[0].toUpperCase()}</AvatarFallback>
+                        </Avatar>
+                        <span className="truncate">{streamer.displayName}</span>
+                        {streamer.isLive && (
+                          <span className="ml-2 h-2 w-2 rounded-full bg-red-500" title={t('live')}></span>
+                        )}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))
+              ) : (
+                <SidebarMenuItem>
+                  <div className="px-2 py-1 text-sm text-muted-foreground">
+                    {t('login')} {t('toSeeFollowing')}
+                  </div>
                 </SidebarMenuItem>
-              ))}
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -79,12 +94,15 @@ export function AppSidebar() {
               {recommendedStreamers.map((streamer) => (
                 <SidebarMenuItem key={streamer.id}>
                   <SidebarMenuButton asChild tooltip={streamer.displayName}>
-                    <Link to={`/channel/${streamer.username}`}>
-                      <Avatar className="h-5 w-5">
+                    <Link to={`/channel/${streamer.username}`} className="flex items-center">
+                      <Avatar className="h-6 w-6 mr-2">
                         <AvatarImage src={streamer.avatarUrl} />
                         <AvatarFallback>{streamer.username[0].toUpperCase()}</AvatarFallback>
                       </Avatar>
-                      <span>{streamer.displayName}</span>
+                      <span className="truncate">{streamer.displayName}</span>
+                      {streamer.isLive && (
+                        <span className="ml-2 h-2 w-2 rounded-full bg-red-500" title={t('live')}></span>
+                      )}
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

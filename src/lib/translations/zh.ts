@@ -1,10 +1,10 @@
-
 export default {
   // Navigation
   home: "首页",
   browse: "浏览",
   following: "关注",
   recommended: "推荐",
+  toSeeFollowing: "以查看关注的主播",
 
   // Footer sections
   platform: "平台",
@@ -124,7 +124,7 @@ export default {
   ourMission: "我们的使命",
   missionDescription: "赋能创作者与世界分享激情，通过直播建立有意义的联系。",
   ourVision: "我们的愿景",
-  visionDescription: "成为最具创作者友好性和创新性的流媒体平台，树立直播娱乐的新标准。",
+  visionDescription: "成为最具创作者友好性和��新性的流媒体平台，树立直播娱乐的新标准。",
   joinTeam: "加入我们的团队",
   pressKit: "媒体资料包",
 

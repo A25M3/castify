@@ -1,106 +1,287 @@
-
-import { faker } from '@faker-js/faker';
-// Categories
 export const categories = [
-  { id: 1, name: 'Just Chatting', viewers: 483200, imageUrl: 'https://i.ibb.co/99Fg8sx4/just-chating.jpg' },
-  { id: 2, name: 'Fortnite', viewers: 237500, imageUrl: 'https://i.ibb.co/LzqVTtH6/fortnite.jpg' },
-  { id: 3, name: 'League of Legends', viewers: 198400, imageUrl: 'https://i.ibb.co/gbb6QWmD/lol.jpg' },
-  { id: 4, name: 'Music', viewers: 104600, imageUrl: 'https://i.ibb.co/g2xQf6V/music.jpg' },
-  { id: 5, name: 'VALORANT', viewers: 97800, imageUrl: 'https://i.ibb.co/GfZjM2cM/valorent.jpg' },
-  { id: 6, name: 'Grand Theft Auto V', viewers: 95400, imageUrl: 'https://i.ibb.co/Jj3MfmQ8/GTA5.jpg' },
-  { id: 7, name: 'Minecraft', viewers: 83700, imageUrl: 'https://i.ibb.co/DD2T7wkd/minecraft.jpg' },
-  { id: 8, name: 'Call of Duty: Warzone', viewers: 78200, imageUrl: 'https://images.unsplash.com/photo-1602673221577-0b56d7ce446b?ixlib=rb-4.0.3' },
-  { id: 9, name: 'Art', viewers: 45600, imageUrl: 'https://i.ibb.co/tTs2yzXn/art.jpg' },
-  { id: 10, name: 'Sports', viewers: 34500, imageUrl: 'https://i.ibb.co/FkdZfHj5/sport.jpg' },
-  { id: 11, name: 'Cooking', viewers: 29800, imageUrl: 'https://i.ibb.co/KxpcG3cC/coocking.jpg' },
-  { id: 12, name: 'Science & Tech', viewers: 21400, imageUrl: 'https://i.ibb.co/jv2nrfCR/science.jpg' }
+  {
+    id: "1",
+    name: "Just Chatting",
+    imageUrl: "https://images.unsplash.com/photo-1504355063403-39c59e569bb3?q=80&w=2070&auto=format&fit=crop",
+    viewers: 12345,
+  },
+  {
+    id: "2",
+    name: "Minecraft",
+    imageUrl: "https://images.unsplash.com/photo-1607199403781-154f3563b7aa?q=80&w=2070&auto=format&fit=crop",
+    viewers: 9876,
+  },
+  {
+    id: "3",
+    name: "League of Legends",
+    imageUrl: "https://images.unsplash.com/photo-1614917599477-d771490e9891?q=80&w=2070&auto=format&fit=crop",
+    viewers: 8765,
+  },
+  {
+    id: "4",
+    name: "Fortnite",
+    imageUrl: "https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=2070&auto=format&fit=crop",
+    viewers: 7654,
+  },
+  {
+    id: "5",
+    name: "Counter-Strike",
+    imageUrl: "https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=2084&auto=format&fit=crop",
+    viewers: 6543,
+  },
+  {
+    id: "6",
+    name: "Elden Ring",
+    imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
+    viewers: 5432,
+  },
+  {
+    id: "7",
+    name: "Valorant",
+    imageUrl: "https://images.unsplash.com/photo-1624623278493-7ca27c949333?q=80&w=2070&auto=format&fit=crop",
+    viewers: 4321,
+  },
+  {
+    id: "8",
+    name: "Apex Legends",
+    imageUrl: "https://images.unsplash.com/photo-1580086529464-41582a5c969b?q=80&w=2070&auto=format&fit=crop",
+    viewers: 3210,
+  },
+  {
+    id: "9",
+    name: "Call of Duty",
+    imageUrl: "https://images.unsplash.com/photo-1603173732899-c157214917ca?q=80&w=2070&auto=format&fit=crop",
+    viewers: 2109,
+  },
+  {
+    id: "10",
+    name: "Grand Theft Auto V",
+    imageUrl: "https://images.unsplash.com/photo-1503443207922-dff7d5439e18?q=80&w=2098&auto=format&fit=crop",
+    viewers: 1098,
+  },
+  {
+    id: "11",
+    name: "Among Us",
+    imageUrl: "https://images.unsplash.com/photo-1600188578489-21a9d4346430?q=80&w=2070&auto=format&fit=crop",
+    viewers: 987,
+  },
+  {
+    id: "12",
+    name: "Overwatch 2",
+    imageUrl: "https://images.unsplash.com/photo-1674492335744-9ff09517c778?q=80&w=2070&auto=format&fit=crop",
+    viewers: 876,
+  },
 ];
 
-// Generate random streamers with realistic data
-export const generateStreamers = (count = 100) => {
-  const streamers = [];
-  
-  for (let i = 0; i < count; i++) {
-    const isLive = Math.random() > 0.4; // 60% chance of being live
-    const categoryId = Math.floor(Math.random() * categories.length) + 1;
-    const category = categories.find(c => c.id === categoryId)!;
-    
-    const streamer = {
-      id: i + 1,
-      username: faker.internet.userName().replace(/[._]/g, ''),
-      displayName: faker.person.fullName(),
-      avatarUrl: faker.image.avatar(),
-      followers: faker.number.int({ min: 100, max: 1000000 }),
-      isLive: isLive,
-      title: isLive ? faker.lorem.sentence() : '',
-      game: isLive ? category.name : '',
-      gameId: isLive ? category.id : null,
-      thumbnail: isLive ? `https://picsum.photos/seed/${i + 1}/640/360` : '',
-      viewers: isLive ? faker.number.int({ min: 10, max: 50000 }) : 0,
-      tags: [
-        faker.word.sample(),
-        faker.word.sample(),
-        faker.word.sample()
-      ],
-      lastSeen: isLive ? null : faker.date.recent({ days: 14 }),
-      bio: faker.lorem.paragraph(),
-      bannerUrl: `https://picsum.photos/seed/banner${i}/1280/360`,
-    };
-    
-    streamers.push(streamer);
+export const featuredStreamers = [
+  {
+    id: "1",
+    username: "gamergirl",
+    displayName: "GamerGirl",
+    title: "Playing the new expansion!",
+    game: "Elden Ring",
+    gameId: "6",
+    thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=gamergirl",
+    viewers: 4523,
+  },
+  {
+    id: "2",
+    username: "pixelpro",
+    displayName: "PixelPro",
+    title: "Speedrunning attempt #42",
+    game: "Minecraft",
+    gameId: "2",
+    thumbnail: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=pixelpro",
+    viewers: 2187,
+  },
+  {
+    id: "3",
+    username: "streamqueen",
+    displayName: "StreamQueen",
+    title: "Ranked matches with viewers!",
+    game: "League of Legends",
+    gameId: "3",
+    thumbnail: "https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=2071&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=streamqueen",
+    viewers: 1856,
+  },
+  {
+    id: "4",
+    username: "noobmaster",
+    displayName: "NoobMaster",
+    title: "Casual gameplay with friends",
+    game: "Fortnite",
+    gameId: "4",
+    thumbnail: "https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=noobmaster",
+    viewers: 1543,
+  },
+];
+
+export const trendingStreamers = [
+  {
+    id: "1",
+    username: "gamergirl",
+    displayName: "GamerGirl",
+    title: "Playing the new expansion!",
+    game: "Elden Ring",
+    thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=gamergirl",
+    viewers: 4523,
+    isLive: true,
+  },
+  {
+    id: "2",
+    username: "pixelpro",
+    displayName: "PixelPro",
+    title: "Speedrunning attempt #42",
+    game: "Minecraft",
+    thumbnail: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=pixelpro",
+    viewers: 2187,
+    isLive: true,
+  },
+  {
+    id: "3",
+    username: "streamqueen",
+    displayName: "StreamQueen",
+    title: "Ranked matches with viewers!",
+    game: "League of Legends",
+    thumbnail: "https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=2071&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=streamqueen",
+    viewers: 1856,
+    isLive: false,
+  },
+  {
+    id: "4",
+    username: "noobmaster",
+    displayName: "NoobMaster",
+    title: "Casual gameplay with friends",
+    game: "Fortnite",
+    thumbnail: "https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=noobmaster",
+    viewers: 1543,
+    isLive: true,
+  },
+  {
+    id: "5",
+    username: "esportsguy",
+    displayName: "EsportsGuy",
+    title: "Tournament practice",
+    game: "Counter-Strike",
+    thumbnail: "https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=2084&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=esportsguy",
+    viewers: 1298,
+    isLive: false,
+  },
+  {
+    id: "6",
+    username: "rtstrategy",
+    displayName: "RTStrategy",
+    title: "Building the perfect base",
+    game: "Starcraft II",
+    thumbnail: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=rtstrategy",
+    viewers: 987,
+    isLive: true,
+  },
+  {
+    id: "7",
+    username: "speedster",
+    displayName: "Speedster",
+    title: "World record attempts!",
+    game: "Super Mario",
+    thumbnail: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=speedster",
+    viewers: 876,
+    isLive: false,
+  },
+  {
+    id: "8",
+    username: "rpglover",
+    displayName: "RPGLover",
+    title: "First playthrough - no spoilers!",
+    game: "Final Fantasy XVI",
+    thumbnail: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=rpglover",
+    viewers: 754,
+    isLive: true,
+  },
+  {
+    id: "9",
+    username: "puzzlemaster",
+    displayName: "PuzzleMaster",
+    title: "Solving the hardest puzzles",
+    game: "Portal 2",
+    thumbnail: "https://images.unsplash.com/photo-1559333086-b0a56225a93c?q=80&w=1936&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=puzzlemaster",
+    viewers: 643,
+    isLive: true,
+  },
+  {
+    id: "10",
+    username: "indiegamer",
+    displayName: "IndieGamer",
+    title: "Discovering hidden gems",
+    game: "Hollow Knight",
+    thumbnail: "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1770&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=indiegamer",
+    viewers: 532,
+    isLive: false,
   }
-  
-  return streamers;
-};
+];
 
-export const streamers = generateStreamers();
-
-// Featured streamers (for homepage)
-export const featuredStreamers = streamers
-  .filter(streamer => streamer.isLive && streamer.viewers > 5000)
-  .slice(0, 3);
-
-// Trending streamers
-export const trendingStreamers = streamers
-  .filter(streamer => streamer.isLive)
-  .sort((a, b) => b.viewers - a.viewers)
-
-// Recommended streamers
-export const recommendedStreamers = streamers
-  .filter(streamer => streamer.isLive)
-  .sort(() => 0.5 - Math.random())
-  .slice(0, 8);
-
-// Generate mock chat messages for a stream
-export const generateChatMessages = (count = 20) => {
-  const messages = [];
-  
-  const chatUsernames = [
-    'NeonRacer', 'QuantumCat', 'PixelWarrior', 'ByteWizard',
-    'StellarNova', 'CyberPenguin', 'GlitchHunter', 'EchoFrost',
-    'VoidWalker', 'BinaryBard', 'AstralPilot', 'ChromePhoenix',
-    'VirtualGhost', 'LaserLynx', 'NebulaNomad', 'CrystalCore',
-    'FluxFalcon', 'SynthSeer', 'RadiantRook', 'PlasmaPixie'
-  ];
-
-  // 3 hours ago to now timestamp range
-  const end = new Date();
-  const start = new Date(end.getTime() - 3 * 60 * 60 * 1000); 
-  
-  for (let i = 0; i < count; i++) {
-    const timestamp = faker.date.between({ from: start, to: end });
-    
-    const message = {
-      id: i + 1,
-      username: chatUsernames[Math.floor(Math.random() * chatUsernames.length)],
-      message: faker.lorem.sentence(),
-      timestamp: timestamp,
-      isSubscriber: Math.random() > 0.7, // 30% chance of being a subscriber
-      isModerator: Math.random() > 0.9, // 10% chance of being a moderator
-    };
-    
-    messages.push(message);
-  }
-  
-  return messages.sort((a, b) => a.timestamp.getTime() - b.timestamp.getTime());
-};
+export const recommendedStreamers = [
+  {
+    id: "11",
+    username: "strategyking",
+    displayName: "StrategyKing",
+    title: "Mastering the meta",
+    game: "Civilization VI",
+    thumbnail: "https://images.unsplash.com/photo-1564942245817-080090930273?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=strategyking",
+    viewers: 421,
+  },
+  {
+    id: "12",
+    username: "retrorevival",
+    displayName: "RetroRevival",
+    title: "Classic games revisited",
+    game: "Super Metroid",
+    thumbnail: "https://images.unsplash.com/photo-1549178213-b9997789fc55?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=retrorevival",
+    viewers: 310,
+  },
+  {
+    id: "13",
+    username: "vrvisionary",
+    displayName: "VRVisionary",
+    title: "Exploring new realities",
+    game: "Beat Saber",
+    thumbnail: "https://images.unsplash.com/photo-1614937539954-159a5563a461?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=vrvisionary",
+    viewers: 209,
+  },
+  {
+    id: "14",
+    username: "tabletoptime",
+    displayName: "TabletopTime",
+    title: "Dice, cards, and fun!",
+    game: "Dungeons & Dragons",
+    thumbnail: "https://images.unsplash.com/photo-1587070954844-ef4499d7c9ca?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=tabletoptime",
+    viewers: 198,
+  },
+  {
+    id: "15",
+    username: "mobilemaster",
+    displayName: "MobileMaster",
+    title: "Gaming on the go",
+    game: "Genshin Impact",
+    thumbnail: "https://images.unsplash.com/photo-1625772452503-f543195ca492?q=80&w=2070&auto=format&fit=crop",
+    avatarUrl: "https://api.dicebear.com/6.x/adventurer/svg?seed=mobilemaster",
+    viewers: 87,
+  },
+];
