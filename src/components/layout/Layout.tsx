@@ -4,6 +4,8 @@ import Header from './Header';
 import Footer from './Footer';
 import { useLanguage } from '@/lib/language-context';
 import { useEffect } from 'react';
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from './AppSidebar';
 
 export default function Layout() {
   const { currentLanguage } = useLanguage();
@@ -22,12 +24,17 @@ export default function Layout() {
   }, [currentLanguage]);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow pt-16">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <SidebarProvider>
+      <div className="min-h-screen flex w-full">
+        <AppSidebar />
+        <div className="flex-1 flex flex-col">
+          <Header />
+          <main className="flex-grow pt-16">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+      </div>
+    </SidebarProvider>
   );
 }
