@@ -62,8 +62,8 @@ export function AppSidebar() {
                         <AvatarFallback>{streamer.username[0].toUpperCase()}</AvatarFallback>
                       </Avatar>
                       <span>{streamer.displayName}</span>
-                    </SidebarMenuButton>
-                  </Link>
+                    </Link>
+                  </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -85,8 +85,8 @@ export function AppSidebar() {
                         <AvatarFallback>{streamer.username[0].toUpperCase()}</AvatarFallback>
                       </Avatar>
                       <span>{streamer.displayName}</span>
-                    </SidebarMenuButton>
-                  </Link>
+                    </Link>
+                  </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
