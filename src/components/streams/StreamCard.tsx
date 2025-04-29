@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useTranslation } from '@/hooks/useTranslation';
 
 interface StreamCardProps {
-  id: number;
+  id: string;  // Changed from number to string
   username: string;
   displayName?: string;
   title: string;

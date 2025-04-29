@@ -4,7 +4,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguage } from '@/lib/language-context';
 
 interface CategoryCardProps {
-  id: number;
+  id: string;  // Changed from number to string
   name: string;
   imageUrl: string;
   viewers: number;
