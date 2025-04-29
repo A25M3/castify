@@ -1,3 +1,4 @@
+
 export default {
   // Navigation
   home: "Home",
@@ -190,14 +191,12 @@ export default {
   safetyResources: "Safety Resources",
   safetyResourcesDesc: "Learn about our community guidelines and safety measures.",
   creatorResourcesDesc: "Access guides and resources to grow your channel.",
-  partnerProgram: "Partner Program",
-  partnerProgramDesc: "Learn about becoming a Castify Partner.",
   browseFAQs: "Browse FAQs",
   creatorGuide: "Creator Guide",
   partnerInfo: "Partner Info",
 
   // Partners Page
-  partnerProgram: "Partner Program",
+  partnerProgram: "Partner Program", 
   partnerProgramDesc: "Join our exclusive partner program and take your streaming career to new heights.",
   requirements: "Requirements",
   reqStreamHours: "Stream for 25 hours in the last 30 days",
