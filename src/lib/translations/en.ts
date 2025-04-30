@@ -119,6 +119,16 @@ export default {
   pastBroadcast: "Past Broadcast",
   duration: "Duration: {duration}",
 
+  // Donations
+  donate: "Donate",
+  donateToStreamer: "Donate to {streamerName}",
+  supportStreamer: "Support {streamerName}",
+  donationAmount: "Donation Amount ($)",
+  donationMessage: "Message (Optional)",
+  processingDonation: "Processing Donation...",
+  donationSuccessful: "Donation Successful!",
+  donationThankYou: "Thank you for supporting {streamerName}!",
+  
   // About Page
   aboutCastify: "About Castify",
   aboutDescription: "Castify is the next generation streaming platform built for creators and their communities.",

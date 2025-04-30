@@ -8,6 +8,7 @@ import { Heart, Users, Calendar, Bell, Play } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import VideoPlayer from '@/components/streams/VideoPlayer';
 import ChatBox from '@/components/streams/ChatBox';
+import DonateButton from '@/components/streams/DonateButton';
 import { useTranslation } from '@/hooks/useTranslation';
 import { streamers } from '@/lib/mock-data';
 
@@ -76,6 +77,7 @@ export default function ChannelPage() {
             <Button variant="outline">
               <Bell className="mr-2 h-4 w-4" /> Subscribe
             </Button>
+            <DonateButton streamerName={channel.displayName} />
           </div>
         </div>
       </div>
