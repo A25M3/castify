@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Bell, Search, ChevronDown, User, LogOut, Settings, Video, Home, Layers } from 'lucide-react';
@@ -158,7 +159,7 @@ export default function Header() {
             <>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="relative">
+                  <Button variant="ghost" size="icon" className={`relative ${isRtl ? 'ml-2' : ''}`}>
                     <Bell className="h-5 w-5" />
                     <span className={`absolute top-1 ${isRtl ? 'left-1' : 'right-1'} h-2 w-2 rounded-full bg-castify-pink`}></span>
                   </Button>
@@ -202,7 +203,7 @@ export default function Header() {
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative flex items-center gap-2">
+                  <Button variant="ghost" className={`relative flex items-center gap-2 ${isRtl ? 'mr-1' : ''}`}>
                     <Avatar className="h-8 w-8">
                       <AvatarImage src={user?.avatarUrl} />
                       <AvatarFallback>{user?.displayName.charAt(0)}</AvatarFallback>
@@ -237,7 +238,7 @@ export default function Header() {
           ) : (
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <Link to="/login">
-                <Button variant="ghost" size="sm">{t('login')}</Button>
+                <Button variant="ghost" size="sm" className={isRtl ? 'ml-1' : ''}>{t('login')}</Button>
               </Link>
               <Link to="/signup">
                 <Button size="sm" variant="default" className="bg-castify-purple hover:bg-castify-purple/90">

@@ -315,6 +315,17 @@
   [dir="rtl"] .icon-rtl-flip {
     transform: scaleX(-1);
   }
+  
+  /* RTL-specific spacing adjustments for header elements */
+  .rtl-spacing button, 
+  .rtl-spacing .dropdown-trigger {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .rtl-spacing .nav-item:not(:last-child) {
+    margin-left: 1rem;
+  }
 }
 
 #root {
