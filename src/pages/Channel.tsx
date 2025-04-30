@@ -1,4 +1,3 @@
-
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -98,6 +97,9 @@ export default function ChannelPage() {
                   {t('startedStreaming', { time: '2 hours' })}
                 </span>
               )}
+            </div>
+            <div className="flex mt-4">
+              <DonateButton streamerName={channel.displayName} />
             </div>
           </div>
         </div>
