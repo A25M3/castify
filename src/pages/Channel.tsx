@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Heart, Users, Calendar, Bell, Play } from 'lucide-react';
+import { Heart, Users, Calendar, Bell, Play, BadgeDollarSign } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import VideoPlayer from '@/components/streams/VideoPlayer';
 import ChatBox from '@/components/streams/ChatBox';
@@ -115,6 +115,7 @@ export default function ChannelPage() {
           <TabsTrigger value="videos">Videos</TabsTrigger>
           <TabsTrigger value="about">About</TabsTrigger>
           <TabsTrigger value="schedule">Schedule</TabsTrigger>
+          <TabsTrigger value="donate">Donate</TabsTrigger>
         </TabsList>
         
         <TabsContent value="videos" className="py-6">
@@ -192,6 +193,64 @@ export default function ChannelPage() {
                   <div className="mt-2 text-sm">Game: To be announced</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="donate" className="py-6">
+          <div className="space-y-6 max-w-3xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-16 w-16 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                <BadgeDollarSign className="h-8 w-8 text-amber-500" />
+              </div>
+              <div>
+                <h3 className="font-medium text-xl">Support {channel.displayName}</h3>
+                <p className="text-muted-foreground">Choose an amount to donate and support this creator</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <h4 className="font-medium text-lg">One-time donation</h4>
+                <div className="flex flex-wrap gap-4">
+                  {[5, 10, 25, 50, 100].map((amount) => (
+                    <Button 
+                      key={amount}
+                      onClick={() => {
+                        // We'll reuse the existing DonateButton functionality
+                        // by programmatically clicking it after setting the amount
+                        const donateBtn = document.getElementById('main-donate-button');
+                        if (donateBtn) donateBtn.click();
+                      }}
+                      className="bg-amber-500 hover:bg-amber-600"
+                    >
+                      <BadgeDollarSign className="mr-2 h-4 w-4" />
+                      ${amount}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <h4 className="font-medium text-lg">Support options</h4>
+                <p className="text-muted-foreground mb-4">
+                  Your donations help {channel.displayName} create more content and improve the stream quality.
+                </p>
+                <div className="hidden">
+                  {/* Hidden button that we'll trigger programmatically */}
+                  <DonateButton id="main-donate-button" streamerName={channel.displayName} />
+                </div>
+                <Button 
+                  onClick={() => {
+                    const donateBtn = document.getElementById('main-donate-button');
+                    if (donateBtn) donateBtn.click();
+                  }}
+                  className="w-full bg-amber-500 hover:bg-amber-600"
+                >
+                  <BadgeDollarSign className="mr-2 h-5 w-5" />
+                  Custom Donation
+                </Button>
+              </div>
             </div>
           </div>
         </TabsContent>

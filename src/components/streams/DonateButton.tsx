@@ -9,9 +9,10 @@ import { useToast } from '@/hooks/use-toast';
 
 interface DonateButtonProps {
   streamerName: string;
+  id?: string;
 }
 
-export default function DonateButton({ streamerName }: DonateButtonProps) {
+export default function DonateButton({ streamerName, id }: DonateButtonProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [amount, setAmount] = useState('5');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,6 +37,7 @@ export default function DonateButton({ streamerName }: DonateButtonProps) {
   return (
     <>
       <Button 
+        id={id}
         onClick={() => setIsDialogOpen(true)}
         className="bg-amber-500 hover:bg-amber-600"
       >
