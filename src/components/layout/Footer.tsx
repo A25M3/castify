@@ -5,7 +5,7 @@ import Logo from '../ui/Logo';
 export default function Footer() {
   return (
     <footer className="bg-gray-900 border-t border-gray-800 mt-8 overflow-hidden">
-      <div className="container mx-auto px-4 py-8 md:ml-60 md:mr-60">
+      <div className="container mx-auto px-4 py-8 md:mr-60">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-7">
           <div className='text-center md:text-left'>
             <Logo className="h-10 w-auto mb-4 flex space-x-4 items-center justify-center md:justify-start" />
