@@ -1,172 +1,103 @@
-
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Heart, Globe } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
-import { useLanguage, languages } from '@/lib/language-context';
-import { useTranslation } from '@/hooks/useTranslation';
+import { Twitter, Instagram, Youtube, Facebook, Twitch, Globe, Home, Layers, Search, Settings } from 'lucide-react';
+import Logo from '../ui/Logo';
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-  const { currentLanguage, setLanguage } = useLanguage();
-  const isRtl = currentLanguage.direction === 'rtl';
-  const { t } = useTranslation();
-
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-4 py-10">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-castify-purple to-castify-blue bg-clip-text text-transparent">
-              Castify
-            </h3>
-            <p className="text-muted-foreground">
-              The next generation streaming platform for creators and audiences.
+    <footer className="bg-gray-900 border-t border-gray-800 mt-8 overflow-hidden">
+      <div className="container mx-auto px-4 py-8 md:ml-60 md:mr-60">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-7">
+          <div className='text-center md:text-left'>
+            <Logo className="h-10 w-auto mb-4 flex space-x-4 items-center justify-center md:justify-start" />
+            <p className="text-gray-400 text-sm mb-4">
+              The future of live streaming is here. Connect, create, and share your world with Castify.
             </p>
-            <div className="flex space-x-4 rtl:space-x-reverse">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
-                <Facebook size={20} />
+            <div className="flex space-x-4 items-center justify-center md:justify-start">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500 transition">
+                <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
-                <Twitter size={20} />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500 transition">
+                <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
-                <Instagram size={20} />
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500 transition">
+                <Youtube className="h-5 w-5" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-castify-purple transition">
-                <Youtube size={20} />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500 transition">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500 transition">
+                <Twitch className="h-5 w-5" />
               </a>
             </div>
           </div>
-
-          <div>
-            <h4 className="font-medium mb-4">{t("platform")}</h4>
-            <ul className="space-y-2">
+          
+          <div className='text-center md:text-left'>
+            <h3 className="text-white font-semibold mb-4">Main Navigation</h3>
+            <ul className="space-y-2 text-gray-400">
               <li>
-                <Link to="/browse" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("browse")}
+                <Link to="/" className="hover:text-purple-400 transition flex items-center">
+                  <Home className="h-4 w-4 mr-1" /> Home
                 </Link>
               </li>
               <li>
-                <Link to="/categories" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("categories")}
+                <Link to="/browse" className="hover:text-purple-400 transition flex items-center">
+                  <Layers className="h-4 w-4 mr-1" /> Browse
                 </Link>
               </li>
               <li>
-                <Link to="/studio" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("studioTitle")}
+                <Link to="/search" className="hover:text-purple-400 transition flex items-center">
+                  <Search className="h-4 w-4 mr-1" /> Search
                 </Link>
               </li>
               <li>
-                <Link to="/start-streaming" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("startStreaming")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-medium mb-4">{t("resources")}</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/support" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("supportCenter")}
-                </Link>
-              </li>
-              <li>
-                <Link to="/safety" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("safetyCenter")}
-                </Link>
-              </li>
-              <li>
-                <Link to="/creators" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("creatorResources")}
-                </Link>
-              </li>
-              <li>
-                <Link to="/partners" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("partners")}
+                <Link to="/dashboard" className="hover:text-purple-400 transition flex items-center">
+                  <Settings className="h-4 w-4 mr-1" /> Dashboard
                 </Link>
               </li>
             </ul>
           </div>
-
-          <div>
-            <h4 className="font-medium mb-4">{t("company")}</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("about")}
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("careers")}
-                </Link>
-              </li>
-              <li>
-                <Link to="/press" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("press")}
-                </Link>
-              </li>
-              <li>
-                <Link to="/brand" className="text-muted-foreground hover:text-castify-purple transition">
-                  {t("brand")}
-                </Link>
-              </li>
+          
+          <div className='text-center md:text-left'>
+            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li><Link to="/help" className="hover:text-purple-400 transition">Help Center</Link></li>
+              <li><Link to="/community" className="hover:text-purple-400 transition">Community Guidelines</Link></li>
+              <li><Link to="/creators" className="hover:text-purple-400 transition">Creator Resources</Link></li>
+              <li><Link to="/developers" className="hover:text-purple-400 transition">Developers</Link></li>
+              <li><Link to="/advertise" className="hover:text-purple-400 transition">Advertise</Link></li>
             </ul>
           </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-            <p>© {year} Castify. {t("allRightsReserved")}</p>
-          </div>
-
-          <div className="flex flex-wrap gap-4 md:gap-6 text-sm justify-center">
-            <Link to="/terms" className="text-muted-foreground hover:text-castify-purple transition">
-              {t("terms")}
-            </Link>
-            <Link to="/privacy" className="text-muted-foreground hover:text-castify-purple transition">
-              {t("privacy")}
-            </Link>
-            <Link to="/cookie-settings" className="text-muted-foreground hover:text-castify-purple transition">
-              {t("cookies")}
-            </Link>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-8 gap-2">
-                  <Globe size={16} />
-                  {currentLanguage.name}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align={isRtl ? "start" : "end"} className="w-[200px]">
-                {languages.map((lang) => (
-                  <DropdownMenuItem 
-                    key={lang.code}
-                    onClick={() => setLanguage(lang)}
-                    className={currentLanguage.code === lang.code ? "bg-muted" : ""}
-                  >
-                    {lang.name}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+          
+          <div className='text-center md:text-left'>
+            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li><Link to="/terms" className="hover:text-purple-400 transition">Terms of Service</Link></li>
+              <li><Link to="/privacy" className="hover:text-purple-400 transition">Privacy Policy</Link></li>
+              <li><Link to="/cookies" className="hover:text-purple-400 transition">Cookie Policy</Link></li>
+              <li><Link to="/dmca" className="hover:text-purple-400 transition">DMCA Guidelines</Link></li>
+              <li><Link to="/accessibility" className="hover:text-purple-400 transition">Accessibility</Link></li>
+            </ul>
           </div>
         </div>
         
-        <div className="mt-6 text-center text-xs text-muted-foreground">
-          <p className="flex items-center justify-center gap-1">
-            {t("madeWith")} <Heart size={12} className="text-castify-pink mx-1" /> by CASTIFY
+        <div className="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row items-center">
+          <p className="text-gray-500 text-sm md:mr-20">
+            © 2025 Castify, Inc. All rights reserved.
           </p>
+          
+          <div className="mt-4 md:mt-0 flex items-center">
+            <Globe className="h-4 w-4 text-gray-500 mr-2" />
+            <select 
+              className="bg-gray-800 text-gray-400 text-sm border border-gray-700 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-purple-500"
+            >
+              <option value="en-US">English (US)</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="ja">日本語</option>
+              <option value="ko">한국어</option>
+            </select>
+          </div>
         </div>
       </div>
     </footer>
